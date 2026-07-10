@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirman Developers | Premium Real Estate</title>
+    
+    <!-- Link to Header Styles (Design System Core Included) -->
+    <link rel="stylesheet" href="css/header.css">
+    <!-- Link to Hero and Page Specific Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       1. Fixed Navigation Header
+       ========================================================================== -->
+    <header class="header-nav" id="header-nav">
+        <div class="nav-container">
+            
+            <!-- Company Logo Placement (Editable Placeholder) -->
+            <a href="index.html" class="logo-link" aria-label="Nirman Developers Homepage">
+                <img src="images/logo/logo.png" alt="Nirman Developers Logo" class="logo-image">
+            </a>
+            
+            <!-- Desktop Navigation Menu -->
+            <nav aria-label="Desktop Navigation">
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="pages/about.html" class="nav-link">About</a></li>
+                    <li><a href="pages/services.html" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- CTA Actions Block -->
+            <div class="nav-actions">
+                <a href="pages/contact.html" class="btn btn-outline btn-desktop-cta">Book Site Visit</a>
+                
+                <!-- Hamburger Trigger Button for Mobile Navigation Menu -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       2. Mobile Menu Drawer Overlay
+       ========================================================================== -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true">
+        <!-- Close Drawer Action Button -->
+        <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <!-- Mobile Links Directory -->
+        <ul class="mobile-nav-list">
+            <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
+            <li><a href="pages/about.html" class="mobile-nav-link">About</a></li>
+            <li><a href="pages/services.html" class="mobile-nav-link">Services</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="pages/gallery.html" class="mobile-nav-link">Gallery</a></li>
+            <li><a href="pages/contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile Drawer Branding Contact Details -->
+        <div class="mobile-drawer-footer">
+            <h5>VIP Reservation Desk</h5>
+            <a href="tel:+919876543210" class="mobile-drawer-phone">+91 98765 43210</a>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       2. Hero Section
+       ========================================================================== -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-container">
+            <div class="hero-bg-image" aria-hidden="true"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-heading">Building Tomorrow's Landmarks</h1>
+                <p class="hero-subheading">Premium residential and commercial developments crafted with trust, innovation, and quality.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-outline hero-btn-primary">Explore Projects</a>
+                    <a href="pages/contact.html" class="btn btn-outline hero-btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator mouse button -->
+        <button class="hero-scroll" id="hero-scroll-btn" aria-label="Scroll down to Next Section">
+            <span class="hero-scroll-text">Explore</span>
+            <div class="hero-mouse" aria-hidden="true">
+                <div class="hero-wheel"></div>
+            </div>
+        </button>
+    </section>
+
+    <!-- ==========================================================================
+       3. Statistics Section
+       ========================================================================== -->
+    <section class="stats-section" id="statistics">
+        <div class="stats-container">
+            <div class="stats-grid">
+                
+                <!-- Stat Card 1 -->
+                <div class="stat-card">
+                    <span class="stat-card-accent"></span>
+                    <span class="stat-category">Experience</span>
+                    <h2 class="stat-number-box">
+                        <span class="stat-number" data-target="12">0</span><span class="stat-suffix">+</span>
+                    </h2>
+                    <p class="stat-label">Years of Excellence</p>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="stat-card">
+                    <span class="stat-card-accent"></span>
+                    <span class="stat-category">Projects</span>
+                    <h2 class="stat-number-box">
+                        <span class="stat-number" data-target="35">0</span><span class="stat-suffix">+</span>
+                    </h2>
+                    <p class="stat-label">Projects Delivered</p>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="stat-card">
+                    <span class="stat-card-accent"></span>
+                    <span class="stat-category">Happy Families</span>
+                    <h2 class="stat-number-box">
+                        <span class="stat-number" data-target="1200">0</span><span class="stat-suffix">+</span>
+                    </h2>
+                    <p class="stat-label">Satisfied Families</p>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="stat-card">
+                    <span class="stat-card-accent"></span>
+                    <span class="stat-category">Legal Assurance</span>
+                    <h2 class="stat-number-box">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    </h2>
+                    <p class="stat-label">RERA & Legal Compliance</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ==========================================================================
+       5. Featured Projects Section
+       ========================================================================== -->
+    <section class="projects-section scroll-reveal" id="projects">
+        <div class="projects-container">
+            
+            <!-- Section Header -->
+            <div class="projects-header">
+                <span class="projects-pretitle">Portfolio</span>
+                <h2 class="projects-title">Featured Projects</h2>
+                <p class="projects-subtitle">Explore our handpicked collection of signature residential and commercial developments.</p>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                
+                <!-- Project Card 1 -->
+                <article class="project-card">
+                    <div class="project-media">
+                        <a href="pages/project-detail.html?project=kashid-borli" class="project-media-link" style="display: block; width: 100%; height: 100%;">
+                            <img src="images/gallery/firstproject1.jpeg" alt="Kashid-Borli Seaside Plots" class="project-img">
+                        </a>
+                        <span class="project-badge-left">Borli / Kashid</span>
+                        <span class="project-badge-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="badge-shield-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            No Brokerage
+                        </span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-star-divider">
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <h3 class="project-name">Kashid-Borli Seaside Plots</h3>
+                        <hr class="project-card-line">
+                        <ul class="project-info-list">
+                            <li><span class="bullet-triangle">&#9654;</span> By <strong>Nirman Developers</strong></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Location:</strong> <a href="https://maps.app.goo.gl/MX2fiUFNmthjyfZe6?g_st=awb" target="_blank" style="color: var(--accent-gold); text-decoration: underline; font-weight: 600;">Borli, near Kashid (View Map ↗)</a></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Min. Size:</strong> 05 Guntha</li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Price:</strong> ₹ 4 Lakhs/Guntha (Negotiable)</li>
+
+                        </ul>
+                        <div class="project-card-actions">
+                            <button class="project-btn-enquire" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                            <a href="pages/gallery.html?project=kashid-borli" class="project-btn-site">View Gallery</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card" style="opacity: 0.95;">
+                    <div class="project-media">
+                        <a href="pages/project-detail.html?project=alibaug-kurul" class="project-media-link" style="display: block; width: 100%; height: 100%;">
+                            <img src="images/gallery/secondprojectimages3.jpeg" alt="Alibaug Kurul Belkade Village Plots" class="project-img">
+                        </a>
+                        <span class="project-badge-left">Kurul / Alibaug</span>
+                        <span class="project-badge-right" style="background: #e03131;">
+                            SOLD OUT
+                        </span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-star-divider">
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <h3 class="project-name">Alibaug Kurul Plots</h3>
+                        <hr class="project-card-line">
+                        <ul class="project-info-list">
+                            <li><span class="bullet-triangle">&#9654;</span> By <strong>Nirman Developers</strong></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Location:</strong> <a href="https://maps.app.goo.gl/dYojMLpXvZW6QdUt6?g_st=awb" target="_blank" style="color: var(--accent-gold); text-decoration: underline; font-weight: 600;">Kurul, Alibaug (View Map ↗)</a></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Min. Size:</strong> 05 Guntha</li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Total Size:</strong> 05 Acres</li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Price:</strong> ₹ 10 Lakhs/Guntha (Negotiable)</li>
+
+                        </ul>
+                        <div class="project-card-actions">
+                            <button class="project-btn-enquire" disabled style="background: #495057; border-color: #495057; color: #adb5bd; cursor: not-allowed; opacity: 0.8;">Sold Out</button>
+                            <a href="pages/gallery.html?project=alibaug-kurul" class="project-btn-site">View Gallery</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card">
+                    <div class="project-media">
+                        <a href="pages/project-detail.html?project=kashid-tembhode" class="project-media-link" style="display: block; width: 100%; height: 100%;">
+                            <img src="images/gallery/thirdprojectimages1.jpeg" alt="Kashid-Tembhode Seaside Plots" class="project-img">
+                        </a>
+                        <span class="project-badge-left">Tembhode / Alibaug</span>
+                        <span class="project-badge-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="badge-shield-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            No Brokerage
+                        </span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-star-divider">
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <h3 class="project-name">Kashid-Tembhode Plots</h3>
+                        <hr class="project-card-line">
+                        <ul class="project-info-list">
+                            <li><span class="bullet-triangle">&#9654;</span> By <strong>Nirman Developers</strong></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Location:</strong> <a href="https://maps.app.goo.gl/1yFjVWeAmBSZmNgF7?g_st=awb" target="_blank" style="color: var(--accent-gold); text-decoration: underline; font-weight: 600;">Tembhode, near Kashid (View Map ↗)</a></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Min. Size:</strong> 05 Guntha</li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Price:</strong> <strong class="gold-text">₹ 05 Lakhs/Guntha</strong> (Negotiable)</li>
+                        </ul>
+                        <div class="project-card-actions">
+                            <button class="project-btn-enquire" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                            <a href="pages/gallery.html?project=kashid-tembhode" class="project-btn-site">View Gallery</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 4 -->
+                <article class="project-card">
+                    <div class="project-media">
+                        <a href="pages/project-detail.html?project=nirman-valley" class="project-media-link" style="display: block; width: 100%; height: 100%;">
+                            <img src="images/gallery/fourthprojectimages1.jpg" alt="Nirman Valley Premium Farmhouse Plots" class="project-img">
+                        </a>
+                        <span class="project-badge-left">Talavli / Alibaug</span>
+                        <span class="project-badge-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="badge-shield-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            No Brokerage
+                        </span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-star-divider">
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <h3 class="project-name">Nirman Valley</h3>
+                        <hr class="project-card-line">
+                        <ul class="project-info-list">
+                            <li><span class="bullet-triangle">&#9654;</span> By <strong>Nirman Developers</strong></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Location:</strong> <a href="https://maps.google.com/?q=Talavli,Kashid,Alibaug" target="_blank" style="color: var(--accent-gold); text-decoration: underline; font-weight: 600;">Talavli, near Kashid (View Map ↗)</a></li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Min. Size:</strong> 20 Guntha & 1 Acre</li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Total Size:</strong> 50 Acres</li>
+                            <li><span class="bullet-triangle">&#9654;</span> <strong>Price:</strong> <strong class="gold-text">₹ 2.50+ Lakhs/Guntha</strong> (July Offer)</li>
+
+                        </ul>
+                        <div class="project-card-actions">
+                            <button class="project-btn-enquire" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                            <a href="pages/gallery.html?project=nirman-valley" class="project-btn-site">View Gallery</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       6. Why Choose Us Section
+       ========================================================================== -->
+    <section class="benefits-section scroll-reveal" id="why-choose-us">
+        <div class="benefits-container">
+            
+            <!-- Section Header -->
+            <div class="benefits-header">
+                <span class="benefits-pretitle">Our Core Values</span>
+                <h2 class="benefits-title">Why Choose Us</h2>
+                <p class="benefits-subtitle">Unwavering dedication to luxury layouts, absolute corporate honesty, and elite design principles.</p>
+            </div>
+            
+            <!-- Benefits Grid -->
+            <div class="benefits-grid">
+                
+                <!-- Benefit Card 1 -->
+                <div class="benefit-card">
+                    <span class="benefit-accent-border"></span>
+                    <div class="benefit-icon-box">
+                        <img src="images/icons/location.svg" alt="Location Icon" class="benefit-icon" aria-hidden="true">
+                    </div>
+                    <h3 class="benefit-card-title">Prime Locations</h3>
+                    <p class="benefit-card-desc">Bespoke estate positions selected for panoramic vistas, premium connectivity, and high valuation yields.</p>
+                </div>
+
+                <!-- Benefit Card 2 -->
+                <div class="benefit-card">
+                    <span class="benefit-accent-border"></span>
+                    <div class="benefit-icon-box">
+                        <img src="images/icons/shield.svg" alt="Shield Icon" class="benefit-icon" aria-hidden="true">
+                    </div>
+                    <h3 class="benefit-card-title">Transparent Process</h3>
+                    <p class="benefit-card-desc">Clear legal procedures, single-point digital tracking, and absolute clarity at every step of purchase.</p>
+                </div>
+
+                <!-- Benefit Card 3 -->
+                <div class="benefit-card">
+                    <span class="benefit-accent-border"></span>
+                    <div class="benefit-icon-box">
+                        <img src="images/icons/building.svg" alt="Building Icon" class="benefit-icon" aria-hidden="true">
+                    </div>
+                    <h3 class="benefit-card-title">Premium Construction Quality</h3>
+                    <p class="benefit-card-desc">Elite grades of stone, reinforced infrastructure, and luxury craftsmanship meeting international codes.</p>
+                </div>
+
+                <!-- Benefit Card 4 -->
+                <div class="benefit-card">
+                    <span class="benefit-accent-border"></span>
+                    <div class="benefit-icon-box">
+                        <img src="images/icons/clock.svg" alt="Clock Icon" class="benefit-icon" aria-hidden="true">
+                    </div>
+                    <h3 class="benefit-card-title">On-Time Delivery</h3>
+                    <p class="benefit-card-desc">Structured critical path execution templates ensuring absolute compliance with stated handover terms.</p>
+                </div>
+
+                <!-- Benefit Card 5 -->
+                <div class="benefit-card">
+                    <span class="benefit-accent-border"></span>
+                    <div class="benefit-icon-box">
+                        <img src="images/icons/users.svg" alt="Users Icon" class="benefit-icon" aria-hidden="true">
+                    </div>
+                    <h3 class="benefit-card-title">Customer First Approach</h3>
+                    <p class="benefit-card-desc">Tailored post-sales assistance, custom architectural layout adjustments, and lifetime property care.</p>
+                </div>
+
+                <!-- Benefit Card 6 -->
+                <div class="benefit-card">
+                    <span class="benefit-accent-border"></span>
+                    <div class="benefit-icon-box">
+                        <img src="images/icons/doc.svg" alt="Document Icon" class="benefit-icon" aria-hidden="true">
+                    </div>
+                    <h3 class="benefit-card-title">Legal & RERA Compliance</h3>
+                    <p class="benefit-card-desc">100% clear RERA title numbers and validated municipal building certificate guarantees.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       8. Construction Process Section
+       ========================================================================== -->
+    <section class="process-section scroll-reveal" id="process">
+        <div class="process-container">
+            
+            <!-- Section Header -->
+            <div class="process-header">
+                <span class="process-pretitle">Workflow</span>
+                <h2 class="process-title">Our Construction Process</h2>
+                <p class="process-subtitle">From land acquisition to final handover, we ensure transparency, compliance, and top-tier craftsmanship at every stage.</p>
+            </div>
+            
+            <!-- Timeline Wrapper -->
+            <div class="timeline-wrapper">
+                <div class="timeline-track"></div>
+                
+                <div class="timeline-steps">
+                    
+                    <!-- Step 1 -->
+                    <div class="timeline-step">
+                        <div class="step-badge">01</div>
+                        <div class="step-icon-box">
+                            <img src="images/icons/site.svg" alt="Site Selection Icon" class="step-icon" aria-hidden="true">
+                        </div>
+                        <h3 class="step-title">Site Selection</h3>
+                        <p class="step-desc">Acquiring premium acreages and plotted countryside locations with high growth yields and legal feasibility.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-step">
+                        <div class="step-badge">02</div>
+                        <div class="step-icon-box">
+                            <img src="images/icons/design.svg" alt="Planning & Design Icon" class="step-icon" aria-hidden="true">
+                        </div>
+                        <h3 class="step-title">Planning & Design</h3>
+                        <p class="step-desc">Crafting tailored architectural layouts, structural floor plans, and landscape designs meeting green codes.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-step">
+                        <div class="step-badge">03</div>
+                        <div class="step-icon-box">
+                            <img src="images/icons/approval.svg" alt="Government Approvals Icon" class="step-icon" aria-hidden="true">
+                        </div>
+                        <h3 class="step-title">Government Approvals</h3>
+                        <p class="step-desc">Securing 100% legal clarity, municipal permissions, NOCs, and complete RERA registrations beforehand.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-step">
+                        <div class="step-badge">04</div>
+                        <div class="step-icon-box">
+                            <img src="images/icons/construction.svg" alt="Construction Icon" class="step-icon" aria-hidden="true">
+                        </div>
+                        <h3 class="step-title">Construction</h3>
+                        <p class="step-desc">Executing civil engineering works with elite grades of steel, stone infrastructure, and seasoned builders.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="timeline-step">
+                        <div class="step-badge">05</div>
+                        <div class="step-icon-box">
+                            <img src="images/icons/quality.svg" alt="Quality Inspection Icon" class="step-icon" aria-hidden="true">
+                        </div>
+                        <h3 class="step-title">Quality Inspection</h3>
+                        <p class="step-desc">Conducting multi-tiered quality checklist checks, material tests, and strict structural strength evaluations.</p>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="timeline-step">
+                        <div class="step-badge">06</div>
+                        <div class="step-icon-box">
+                            <img src="images/icons/handover.svg" alt="Project Handover Icon" class="step-icon" aria-hidden="true">
+                        </div>
+                        <h3 class="step-title">Project Handover</h3>
+                        <p class="step-desc">Transferring absolute clear ownership titles, possession keys, and lifetime customer care assistance.</p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>    <!-- ==========================================================================
+       10. Testimonials Section
+       ========================================================================== -->
+    <section class="testimonials-section scroll-reveal" id="testimonials">
+        <div class="testimonials-container">
+            
+            <!-- Section Header -->
+            <div class="testimonials-header">
+                <span class="testimonials-pretitle">Client Voices</span>
+                <h2 class="testimonials-title">What Our Clients Say</h2>
+                <p class="testimonials-subtitle">Hear from our esteemed clients about their experience of building their dream properties with Nirman Developers.</p>
+            </div>
+            
+            <!-- Testimonial Slider / Grid Wrapper -->
+            <div class="slider-wrapper" id="testimonials-slider">
+                <!-- Inner track container -->
+                <div class="slider-track">
+                    
+                    <!-- Card 1 -->
+                    <div class="testimonial-card">
+                        <div class="card-top">
+                            <img src="images/testimonials/client-1.jpg" alt="Client Rajesh Kumar" class="client-avatar" loading="lazy">
+                            <div class="client-meta">
+                                <h3 class="client-name">Rajesh Kumar</h3>
+                                <span class="client-city">Mumbai</span>
+                            </div>
+                        </div>
+                        <div class="star-rating">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                        </div>
+                        <p class="testimonial-text">"Buying a plot at Kashid-Borli Seaside Plots was a seamless process. Nirman Developers handled all documentation with absolute legal transparency."</p>
+                        <span class="project-tag">Kashid-Borli Plots</span>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="testimonial-card">
+                        <div class="card-top">
+                            <img src="images/testimonials/client-2.jpg" alt="Client Priya Sharma" class="client-avatar" loading="lazy">
+                            <div class="client-meta">
+                                <h3 class="client-name">Priya Sharma</h3>
+                                <span class="client-city">Pune</span>
+                            </div>
+                        </div>
+                        <div class="star-rating">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                        </div>
+                        <p class="testimonial-text">"The Alibaug Kurul Plots project exceeded our expectations. The plots are very close to Alibaug city and the beach, making them perfect for investment or a private retreat."</p>
+                        <span class="project-tag">Alibaug Kurul Plots</span>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="testimonial-card">
+                        <div class="card-top">
+                            <img src="images/testimonials/client-3.jpg" alt="Client Amit Patel" class="client-avatar" loading="lazy">
+                            <div class="client-meta">
+                                <h3 class="client-name">Amit Patel</h3>
+                                <span class="client-city">Ahmedabad</span>
+                            </div>
+                        </div>
+                        <div class="star-rating">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                        </div>
+                        <p class="testimonial-text">"Legal compliance was my primary concern, but Nirman Developers provided clear titles and maps of Kashid-Tembhode Plots from day one."</p>
+                        <span class="project-tag">Kashid-Tembhode Plots</span>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="testimonial-card">
+                        <div class="card-top">
+                            <img src="images/testimonials/client-4.jpg" alt="Client Vikram Malhotra" class="client-avatar" loading="lazy">
+                            <div class="client-meta">
+                                <h3 class="client-name">Vikram Malhotra</h3>
+                                <span class="client-city">Delhi</span>
+                            </div>
+                        </div>
+                        <div class="star-rating">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                        </div>
+                        <p class="testimonial-text">"Their layout planning is highly structured. From drainage grids to paved access roads, they deliver premium infrastructure."</p>
+                        <span class="project-tag">Nirman Valley</span>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="testimonial-card">
+                        <div class="card-top">
+                            <img src="images/testimonials/client-5.jpg" alt="Client Anjali Desai" class="client-avatar" loading="lazy">
+                            <div class="client-meta">
+                                <h3 class="client-name">Anjali Desai</h3>
+                                <span class="client-city">Bangalore</span>
+                            </div>
+                        </div>
+                        <div class="star-rating">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                        </div>
+                        <p class="testimonial-text">"Feasibility checks and consulting were incredibly thorough. The team guided us to the best property match for our portfolio."</p>
+                        <span class="project-tag">Kashid-Borli Plots</span>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="testimonial-card">
+                        <div class="card-top">
+                            <img src="images/testimonials/client-6.jpg" alt="Client Sandeep Mehta" class="client-avatar" loading="lazy">
+                            <div class="client-meta">
+                                <h3 class="client-name">Sandeep Mehta</h3>
+                                <span class="client-city">Surat</span>
+                            </div>
+                        </div>
+                        <div class="star-rating">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                            <img src="images/icons/star.svg" alt="Star" class="star-icon">
+                        </div>
+                        <p class="testimonial-text">"Superb customer care and post-purchase follow-up. They are still helping us clear architectural plans for our private villa."</p>
+                        <span class="project-tag">Kashid-Tembhode Plots</span>
+                    </div>
+
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button class="slider-btn prev" id="slider-prev" aria-label="Previous Testimonial">&#10094;</button>
+                <button class="slider-btn next" id="slider-next" aria-label="Next Testimonial">&#10095;</button>
+            </div>
+            
+            <!-- Indicators/Dots -->
+            <div class="slider-dots" id="slider-dots"></div>
+            
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
+       13. Premium Footer Section
+       ========================================================================== -->
+    <footer class="footer-section">
+        
+        <!-- Newsletter Bar -->
+        <div class="footer-newsletter">
+            <div class="newsletter-container">
+                <div class="newsletter-text">
+                    <h3 class="newsletter-title">Subscribe to Our Newsletter</h3>
+                    <p class="newsletter-desc">Keep informed about new project launches, market updates, and exclusive property offers.</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email address" class="newsletter-input" aria-label="Email address for newsletter" required>
+                    <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="footer-grid">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="footer-logo-link" aria-label="Nirman Developers Homepage">
+                        <img src="images/logo/logo.png" alt="Nirman Developers Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-desc">Crafting premium residential developments, luxury countryside villas, and commercial spaces with architectural innovation, complete legal compliance, and unmatched quality since inception.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook Page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Company Page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube Channel">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon" aria-hidden="true">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.41 19c1.71.46 8.59.46 8.59.46s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp Chat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon" aria-hidden="true">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <nav class="footer-col" aria-label="Footer Quick Links">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="pages/services.html">Services</a></li>
+                        <li><a href="pages/gallery.html">Gallery</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 3: Services -->
+                <nav class="footer-col" aria-label="Footer Our Services">
+                    <h4 class="footer-col-title">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/services.html#residential">Residential Projects</a></li>
+                        <li><a href="pages/services.html#commercial">Commercial Projects</a></li>
+                        <li><a href="pages/services.html#villas">Luxury Villas</a></li>
+                        <li><a href="pages/services.html#land">Land Development</a></li>
+                        <li><a href="pages/services.html#investment">Property Investment</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 4: Contact info -->
+                <div class="footer-col contact-col">
+                    <h4 class="footer-col-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li class="contact-item">
+                            <span class="contact-label">Address:</span>
+                            <span class="contact-value">101-102, Gold Crest Plaza, Senapati Bapat Road, Shivajinagar, Pune, Maharashtra 411016</span>
+                        </li>
+                        <li class="contact-item">
+                            <span class="contact-label">Phone:</span>
+                            <a href="tel:+919876543210" class="contact-value">+91 98765 43210</a>
+                        </li>
+                        <li class="contact-item">
+                            <span class="contact-label">Email:</span>
+                            <a href="mailto:info@nirmandevelopers.com" class="contact-value">info@nirmandevelopers.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Footer Bar -->
+        <div class="footer-bottom">
+            <div class="bottom-container">
+                <p class="copyright">&copy; 2026 Nirman Developers. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="pages/privacy-policy.html">Privacy Policy</a>
+                    <a href="pages/terms.html">Terms & Conditions</a>
+                </div>
+                <p class="designed-by">Designed for Nirman Developers</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210?text=Hi%20I%20am%20interested%20in%20your%20property" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="whatsapp-icon">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </a>
+
+    <!-- Floating Call Button -->
+    <a href="tel:+919876543210" class="call-float" aria-label="Call VIP Reservation Desk">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="call-icon">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+    </a>
+
+    <!-- Enquiry Modal Popup -->
+    <div id="enquiry-popup" class="enquiry-popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="enquiry-popup-box">
+            <button class="enquiry-popup-close" id="enquiry-popup-close" aria-label="Close Enquiry Modal">&times;</button>
+            <div class="popup-header-box">
+                <span class="popup-title-main">Enquire About</span>
+                <h3 class="popup-title-sub">Callback & Brochure Request</h3>
+            </div>
+            <form class="enquiry-popup-form" onsubmit="event.preventDefault(); alert('Thank you! Your enquiry has been received. Our sales representatives will connect with you shortly.'); document.getElementById('enquiry-popup').style.display='none'; this.reset();">
+                <div class="popup-form-group">
+                    <label for="popup-name">Full Name <span class="required-star">*</span></label>
+                    <input type="text" id="popup-name" placeholder="John Doe" required>
+                </div>
+                <div class="popup-form-group">
+                    <label for="popup-phone">Phone Number <span class="required-star">*</span></label>
+                    <input type="tel" id="popup-phone" placeholder="E.g. 7718853773" required>
+                </div>
+                <div class="popup-form-group">
+                    <label for="popup-email">Email Address (Optional)</label>
+                    <input type="email" id="popup-email" placeholder="john@example.com">
+                </div>
+                <div class="popup-form-group">
+                    <label for="popup-message">Message</label>
+                    <textarea id="popup-message" rows="3" placeholder="Interested in Callback & Brochure Request. Please share brochure and pricing details."></textarea>
+                </div>
+                <button type="submit" class="popup-submit-btn">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header Scripts Link -->
+    <script src="js/header.js"></script>
+    <!-- App Scripts Link -->
+    <script src="js/main.js"></script>
+</body>
+</html>

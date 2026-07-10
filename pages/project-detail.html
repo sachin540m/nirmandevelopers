@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Nirman Developers</title>
+    
+    <!-- Link to Header Styles (Design System Core Included) -->
+    <link rel="stylesheet" href="../css/header.css">
+    <!-- Link to Hero and Page Specific Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* Details Page Specific Premium Styles */
+        .project-details-section {
+            background-color: var(--bg-primary);
+            padding: 8rem 4rem;
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+        }
+        
+        .details-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Detail Cards Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .spec-item-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition-smooth);
+        }
+        
+        .spec-item-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-gold), var(--shadow-heavy);
+        }
+        
+        .spec-icon-box {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .spec-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-value {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Content Columns Split */
+        .details-content-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+        
+        /* Description & Landmarks Column */
+        .details-left-col h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .project-desc-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+        
+        .landmarks-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 3rem;
+        }
+        
+        .landmarks-box h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .landmarks-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .landmark-item {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        /* Sidebar Enquiry Card */
+        .enquiry-sidebar-card {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(212,175,55,0.02) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 3rem 2.5rem;
+            position: sticky;
+            top: 120px;
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .enquiry-sidebar-card.sold-out {
+            border-color: #d32f2f;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(211,47,47,0.02) 100%);
+        }
+        
+        .sidebar-form-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .sidebar-form-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .form-group-sidebar {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group-sidebar label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group-sidebar input,
+        .form-group-sidebar select,
+        .form-group-sidebar textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-primary);
+            padding: 0.8rem 1rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+        
+        .form-group-sidebar input:focus,
+        .form-group-sidebar select:focus,
+        .form-group-sidebar textarea:focus {
+            border-color: var(--accent-gold);
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .sidebar-submit-btn {
+            width: 100%;
+            background: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            color: #000000;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            margin-top: 1rem;
+        }
+        
+        .sidebar-submit-btn:hover:not(:disabled) {
+            background-color: transparent;
+            color: var(--accent-gold);
+            box-shadow: 0 0 15px rgba(212,175,55,0.4);
+        }
+        
+        .sidebar-submit-btn:disabled {
+            background: #495057;
+            border-color: #495057;
+            color: #adb5bd;
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        
+        .sold-out-alert-msg {
+            color: #ff4d4d;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            background: rgba(255, 77, 77, 0.05);
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Map & Gallery Preview Section */
+        .location-map-section {
+            margin-top: 6rem;
+        }
+        
+        .location-map-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .map-iframe-wrapper {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+            height: 450px;
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .gallery-shortcut-banner {
+            margin-top: 5rem;
+            background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(5,8,17,0.3) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .gallery-shortcut-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .gallery-shortcut-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .details-content-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .enquiry-sidebar-card {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-details-section {
+                padding: 6rem 2rem;
+            }
+            .gallery-shortcut-banner {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+                padding: 3rem 2rem;
+            }
+            .landmarks-list {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       1. Fixed Navigation Header
+       ========================================================================== -->
+    <header class="header-nav" id="header-nav">
+        <div class="nav-container">
+            
+            <!-- Company Logo Placement -->
+            <a href="../index.html" class="logo-link" aria-label="Nirman Developers Homepage">
+                <img src="../images/logo/logo.png" alt="Nirman Developers Logo" class="logo-image">
+            </a>
+            
+            <!-- Desktop Navigation Menu -->
+            <nav aria-label="Desktop Navigation">
+                <ul class="nav-menu">
+                    <li><a href="../index.html#hero" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- CTA Actions Block -->
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-outline btn-desktop-cta">Book Site Visit</a>
+                
+                <!-- Hamburger Trigger Button for Mobile Navigation Menu -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       2. Mobile Menu Drawer Overlay
+       ========================================================================== -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true">
+        <!-- Close Drawer Action Button -->
+        <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <!-- Mobile Links Directory -->
+        <ul class="mobile-nav-list">
+            <li><a href="../index.html#hero" class="mobile-nav-link">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+            <li><a href="../index.html#projects" class="mobile-nav-link active">Projects</a></li>
+            <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile Drawer Branding Contact Details -->
+        <div class="mobile-drawer-footer">
+            <h5>VIP Reservation Desk</h5>
+            <a href="tel:+919876543210" class="mobile-drawer-phone">+91 98765 43210</a>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       3. Banner Hero Section
+       ========================================================================== -->
+    <section class="hero-section" id="hero" style="min-height: 65vh; height: 65vh;">
+        <div class="hero-bg-container">
+            <div class="hero-bg-image" id="project-hero-bg" style="background-image: url('../images/gallery/firstproject1.jpeg');" aria-hidden="true"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="projects-pretitle" id="project-pretitle-label" style="background: rgba(255, 255, 255, 0.1); padding: 0.4rem 1.2rem; border-radius: 20px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-gold); font-weight: 700;">Gated Community</span>
+                <h1 class="hero-heading" id="project-heading-title" style="font-size: 3.5rem; margin-top: 1rem;">Project Name</h1>
+                <p class="hero-subheading" id="project-subheading-loc">Location Details</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       4. Project Details Body
+       ========================================================================== -->
+    <section class="project-details-section">
+        <div class="details-container">
+            
+            <!-- Specs Cards Row -->
+            <div class="specs-grid">
+                
+                <!-- Spec Card 1 -->
+                <div class="spec-item-card">
+                    <div class="spec-icon-box">📐</div>
+                    <span class="spec-label">Min. Plot Size</span>
+                    <span class="spec-value" id="spec-size">05 Guntha</span>
+                </div>
+
+                <!-- Spec Card 2 -->
+                <div class="spec-item-card">
+                    <div class="spec-icon-box">💰</div>
+                    <span class="spec-label">Price Range</span>
+                    <span class="spec-value" id="spec-price">₹ 4 Lakhs/Guntha</span>
+                </div>
+
+                <!-- Spec Card 3 -->
+                <div class="spec-item-card">
+                    <div class="spec-icon-box">🌳</div>
+                    <span class="spec-label">Project Size</span>
+                    <span class="spec-value" id="spec-total-area">N/A</span>
+                </div>
+
+                <!-- Spec Card 4 -->
+                <div class="spec-item-card">
+                    <div class="spec-icon-box">🛡️</div>
+                    <span class="spec-label">Legal Status</span>
+                    <span class="spec-value" id="spec-rera">RERA Approved</span>
+                </div>
+
+            </div>
+
+            <!-- Content Split Details & Form -->
+            <div class="details-content-grid">
+                
+                <!-- Left Column: Details Narrative -->
+                <div class="details-left-col">
+                    <h2>Project Overview</h2>
+                    <p class="project-desc-text" id="project-overview-description">
+                        Project description will load dynamically.
+                    </p>
+                    
+                    <!-- Key Landmarks -->
+                    <div class="landmarks-box">
+                        <h3>Landmarks & Distances</h3>
+                        <ul class="landmarks-list" id="project-landmarks-ul">
+                            <!-- Injected dynamically -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sidebar Enquiry -->
+                <div class="details-right-col">
+                    <div class="enquiry-sidebar-card" id="enquiry-card-container">
+                        <div id="sold-out-banner" class="sold-out-alert-msg" style="display: none;">
+                            🚨 Sold Out - Registrations Closed
+                        </div>
+                        
+                        <h3 class="sidebar-form-title">Interested?</h3>
+                        <span class="sidebar-form-subtitle">Enquire now for pricing & layouts</span>
+                        
+                        <form id="project-enquiry-form" onsubmit="event.preventDefault(); alert('Thank you for your enquiry! Our representative will connect with you shortly.'); this.reset();">
+                            <div class="form-group-sidebar">
+                                <label for="enquiry-name">Full Name *</label>
+                                <input type="text" id="enquiry-name" placeholder="John Doe" required>
+                            </div>
+                            
+                            <div class="form-group-sidebar">
+                                <label for="enquiry-phone">Phone Number *</label>
+                                <input type="tel" id="enquiry-phone" placeholder="E.g. 7718853773" required>
+                            </div>
+                            
+                            <div class="form-group-sidebar">
+                                <label for="enquiry-email">Email Address</label>
+                                <input type="email" id="enquiry-email" placeholder="john@example.com">
+                            </div>
+                            
+
+                            <div class="form-group-sidebar">
+                                <label for="enquiry-msg">Message</label>
+                                <textarea id="enquiry-msg" rows="3" placeholder="I am interested in this project. Please share details."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="sidebar-submit-btn" id="sidebar-submit-button">Submit Enquiry</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Map Location Section -->
+            <div class="location-map-section">
+                <h2>Project Location</h2>
+                <div class="map-iframe-wrapper">
+                    <iframe id="project-map-iframe" src="about:blank" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Gallery Shortcut Banner -->
+            <div class="gallery-shortcut-banner">
+                <div class="gallery-shortcut-text">
+                    <h3>Explore Project Gallery</h3>
+                    <p>View high-resolution photos and video tours for this project.</p>
+                </div>
+                <a href="gallery.html" class="btn btn-outline" id="project-gallery-link" style="padding: 1rem 2rem;">Go to Gallery</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       5. Premium Footer Section
+       ========================================================================== -->
+    <footer class="footer-section" style="margin-top: 0;">
+        <div class="footer-main">
+            <div class="footer-grid">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="footer-col brand-col">
+                    <a href="../index.html" class="footer-logo-link" aria-label="Nirman Developers Homepage">
+                        <img src="../images/logo/logo.png" alt="Nirman Developers Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-desc">Crafting premium residential developments, luxury countryside villas, and commercial spaces with architectural innovation, complete legal compliance, and unmatched quality since inception.</p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <nav class="footer-col" aria-label="Footer Quick Links">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 3: Services -->
+                <nav class="footer-col" aria-label="Footer Our Services">
+                    <h4 class="footer-col-title">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#projects">Residential Projects</a></li>
+                        <li><a href="../index.html#projects">Commercial Projects</a></li>
+                        <li><a href="../index.html#projects">Luxury Villas</a></li>
+                        <li><a href="../index.html#projects">Land Development</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 4: Contact info -->
+                <div class="footer-col contact-col">
+                    <h4 class="footer-col-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li class="contact-item">
+                            <span class="contact-label">Address:</span>
+                            <span class="contact-value">101-102, Gold Crest Plaza, Senapati Bapat Road, Pune, Maharashtra 411016</span>
+                        </li>
+                        <li class="contact-item">
+                            <span class="contact-label">Phone:</span>
+                            <a href="tel:+919876543210" class="contact-value">+91 98765 43210</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="bottom-container">
+                <p class="copyright">&copy; 2026 Nirman Developers. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Header Scripts Link -->
+    <script src="../js/header.js"></script>
+    
+    <!-- Dynamic Details Populator Engine -->
+    <script>
+        const projectsData = {
+            'kashid-borli': {
+                name: 'Kashid-Borli Seaside Plots',
+                badge: 'Gated Seaside Plots',
+                image: '../images/gallery/firstproject1.jpeg',
+                locationName: 'Borli near Kashid Beach, Raigad',
+                mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.565882697887!2d72.91500000000002!3d18.503463887425126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be87f9754f9a0c7%3A0xe54ef929c362b874!2zMTjCsDMwJzEyLjUiTiA3MsKwNTQnNTQuMCJF!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin',
+                price: '₹ 4 Lakhs / Guntha',
+                minSize: '05 Guntha',
+                totalSize: 'N/A',
+                status: 'Available',
+                rera: 'RERA Approved',
+                soldOut: false,
+                description: 'Kashid-Borli Seaside Plots offer a premium opportunity to own gated plotted land near the stunning Kashid Beach. Nestled in a serene and lush coastal environment, this project is designed for luxury vacation farmhouses or weekend villas. With excellent connectivity to both local beaches and markets, it is the ideal spot to build your tranquil seaside sanctuary.',
+                landmarks: [
+                    '🏖️ Korlai Borli Beach - 1.5 km',
+                    '🏖️ Kashid Beach - 7.5 km',
+                    '🛍️ Borli Mandla Market - 500 m',
+                    '🌊 River - 200 m',
+                    '🏔️ Fansad Dam - 3.5 km'
+                ]
+            },
+            'alibaug-kurul': {
+                name: 'Alibaug Kurul Plots',
+                badge: 'SOLD OUT',
+                image: '../images/gallery/secondprojectimages3.jpeg',
+                locationName: 'Kurul Belkade Village, Alibaug',
+                mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.2789182379383!2d72.88569842424108!3d18.651509387334758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be879f974dfb295%3A0xea84124976cbf84a!2zMTjCsDM5JzA1LjQiTiA3MsKwNTMnMTcuOCJF!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin',
+                price: '₹ 10 Lakhs / Guntha',
+                minSize: '05 Guntha',
+                totalSize: '05 Acres',
+                status: 'Sold Out',
+                rera: 'RERA Approved',
+                soldOut: true,
+                description: 'Alibaug Kurul Belkade Village Plots is a premium master-planned land development project spread across 5 acres of lush greenery in Alibaug. Perfect for high-yield property investment and boutique villa construction, the project boasts close proximity to Alibaug city and several pristine beaches. All plots have been successfully acquired, making this project completely sold out.',
+                landmarks: [
+                    '🏙️ Alibaug City - 2.5 km',
+                    '🏖️ Alibaug Beach - 3.0 km',
+                    '🏖️ Nagaon Beach - 5.0 km',
+                    '🚗 Main Highway Connectivity - Direct access'
+                ]
+            },
+            'kashid-tembhode': {
+                name: 'Kashid-Tembhode Plots',
+                badge: 'Gated Seaside Plots',
+                image: '../images/gallery/thirdprojectimages1.jpeg',
+                locationName: 'Tembhode Village, near Kashid Beach, Alibaug',
+                mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.565882697887!2d72.90500000000002!3d18.503463887425126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be87f9754f9a0c7%3A0xe54ef929c362b874!2zMTjCsDM5JzA1LjQiTiA3MsKwNTMnMTcuOCJF!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin',
+                price: '₹ 05 Lakhs / Guntha',
+                minSize: '05 Guntha',
+                totalSize: 'N/A',
+                status: 'Active',
+                rera: 'Clear Title Property',
+                soldOut: false,
+                description: 'Kashid-Tembhode Plots offer a premium gated residential plot development in Tembhode Village, near the famous Kashid Beach in Alibaug. Surrounded by tranquil natural environment and close to local streams, the project features clear titles and has high potential for farmhouse development and investment appreciation.',
+                landmarks: [
+                    '🏖️ Korlai Borli Beach - 1.5 km',
+                    '🏖️ Kashid Beach - 4.5 km',
+                    '🌊 River - 100 m',
+                    '🏔️ Fansad Dam - 3 km'
+                ]
+            },
+            'nirman-valley': {
+                name: 'Nirman Valley',
+                badge: 'Premium Farmhouse Plots',
+                image: '../images/gallery/fourthprojectimages1.jpg',
+                locationName: 'Talavli Village, near Kashid Beach, Alibaug',
+                mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.565882697887!2d72.91500000000002!3d18.503463887425126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be87f9754f9a0c7%3A0xe54ef929c362b874!2zMTjCsDM5JzA1LjQiTiA3MsKwNTMnMTcuOCJF!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin',
+                price: '₹ 2.50+ Lakhs / Guntha',
+                minSize: '20 Guntha & 1 Acre',
+                totalSize: '50 Acres',
+                status: 'New Launch',
+                rera: 'Clear Title Property',
+                soldOut: false,
+                description: 'Nirman Valley is a newly launched 50-acre premium farmhouse plotted development in Talavli Village near Kashid Beach, Alibaug. Designed for discerning investors and vacation home builders, it offers pristine natural surroundings and high returns up to 50% in 1 year. The project has clear titles and is situated in a rapidly appreciating location.',
+                landmarks: [
+                    '🌊 Close to Korlai & Borli Beach',
+                    '🏖️ Kashid Beach – 10 km',
+                    '🌿 Phansad Dam – 4 km',
+                    '🛍️ Borli-Mandla Market – 1.5 km',
+                    '🌴 Peaceful Natural Surroundings',
+                    '📜 Clear Title Property'
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            let projectSlug = urlParams.get('project');
+            
+            // Default to first project if slug is missing or invalid
+            if (!projectSlug || !projectsData[projectSlug]) {
+                projectSlug = 'kashid-borli';
+            }
+            
+            const project = projectsData[projectSlug];
+            
+            // Populate basic page tags
+            document.title = `${project.name} | Nirman Developers`;
+            document.getElementById('project-hero-bg').style.backgroundImage = `url('${project.image}')`;
+            
+            // Label status & Sold Out settings
+            const label = document.getElementById('project-pretitle-label');
+            label.innerText = project.badge;
+            if (project.soldOut) {
+                label.style.background = '#e03131';
+                label.style.color = '#fff';
+            }
+            
+            document.getElementById('project-heading-title').innerText = project.name;
+            document.getElementById('project-subheading-loc').innerText = project.locationName;
+            
+            // Populate overview specs cards
+            document.getElementById('spec-size').innerText = project.minSize;
+            document.getElementById('spec-price').innerText = project.price;
+            document.getElementById('spec-total-area').innerText = project.totalSize;
+            document.getElementById('spec-rera').innerText = project.rera;
+            
+            // Overview descriptions
+            document.getElementById('project-overview-description').innerText = project.description;
+            
+            // Map location link
+            document.getElementById('project-map-iframe').setAttribute('src', project.mapUrl);
+            
+            // Gallery redirect button
+            document.getElementById('project-gallery-link').setAttribute('href', `gallery.html?project=${projectSlug}`);
+            
+            // Populate key landmarks list
+            const landmarksUl = document.getElementById('project-landmarks-ul');
+            landmarksUl.innerHTML = '';
+            project.landmarks.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'landmark-item';
+                li.innerHTML = `<span>📍</span> ${item}`;
+                landmarksUl.appendChild(li);
+            });
+            
+            // Handle enquiry form disabled state for Sold Out projects
+            if (project.soldOut) {
+                const form = document.getElementById('project-enquiry-form');
+                const formContainer = document.getElementById('enquiry-card-container');
+                const soldOutBanner = document.getElementById('sold-out-banner');
+                const submitBtn = document.getElementById('sidebar-submit-button');
+                
+                // Add sold-out class
+                formContainer.classList.add('sold-out');
+                soldOutBanner.style.display = 'block';
+                
+                // Disable all form inputs
+                const elements = form.elements;
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].disabled = true;
+                }
+                submitBtn.innerText = 'Sold Out';
+            }
+        });
+    </script>
+</body>
+</html>
