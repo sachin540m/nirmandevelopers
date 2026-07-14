@@ -3857,7 +3857,7 @@ a.contact-value:hover {
 .service-features-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 2.5rem 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -3936,8 +3936,7 @@ a.contact-value:hover {
 
 .service-card-img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -3974,6 +3973,126 @@ a.contact-value:hover {
     max-width: 100%;
   }
 }
+
+/* ==========================================================================
+   34. Nearby Attractions Section (Project Details)
+   ========================================================================== */
+.nearby-attractions-section {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.nearby-attractions-section h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.attractions-intro {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.attraction-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+  border-color: rgba(179, 143, 67, 0.3);
+}
+
+.attraction-img-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.attraction-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.attraction-card:hover .attraction-img {
+  transform: scale(1.05);
+}
+
+.attraction-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(5, 8, 17, 0.85);
+  color: var(--accent-gold);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.attraction-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.attraction-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.attraction-distance {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .nearby-attractions-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+  }
+  
+  .nearby-attractions-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
 
 
 

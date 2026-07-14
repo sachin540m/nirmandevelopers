@@ -503,6 +503,15 @@
                 </div>
             </div>
 
+            <!-- Nearby Attractions Section -->
+            <div class="nearby-attractions-section">
+                <h2>Nearby Attractions (&lt; 50 km)</h2>
+                <p class="attractions-intro">Explore the beautiful beaches, historic forts, and sacred temples surrounding the project site.</p>
+                <div class="attractions-grid" id="project-attractions-grid">
+                    <!-- Injected dynamically via JS -->
+                </div>
+            </div>
+
             <!-- Gallery Shortcut Banner -->
             <div class="gallery-shortcut-banner">
                 <div class="gallery-shortcut-text">
@@ -608,6 +617,32 @@
                     '🛍️ Borli Mandla Market - 500 m',
                     '🌊 River - 200 m',
                     '🏔️ Fansad Dam - 3.5 km'
+                ],
+                attractions: [
+                    {
+                        name: 'Kashid Beach',
+                        category: 'Beach & Beautiful Place',
+                        distance: '7.5 km',
+                        image: '../images/attractions/kashid_beach.png'
+                    },
+                    {
+                        name: 'Phansad Wildlife Sanctuary & Dam',
+                        category: 'Nature & Beautiful Place',
+                        distance: '3.5 km',
+                        image: '../images/attractions/phansad_sanctuary.png'
+                    },
+                    {
+                        name: 'Birla Ganesh Temple (Salav)',
+                        category: 'Holy Place',
+                        distance: '12 km',
+                        image: '../images/attractions/birla_temple.png'
+                    },
+                    {
+                        name: 'Murud Janjira Sea Fort',
+                        category: 'Historical Fort & Tourist Place',
+                        distance: '15 km',
+                        image: '../images/attractions/murud_janjira.png'
+                    }
                 ]
             },
             'alibaug-kurul': {
@@ -628,6 +663,32 @@
                     '🏖️ Alibaug Beach - 3.0 km',
                     '🏖️ Nagaon Beach - 5.0 km',
                     '🚗 Main Highway Connectivity - Direct access'
+                ],
+                attractions: [
+                    {
+                        name: 'Kolaba Sea Fort (Alibaug Beach)',
+                        category: 'Historical Fort & Tourist Place',
+                        distance: '3.5 km',
+                        image: '../images/attractions/kolaba_fort.png'
+                    },
+                    {
+                        name: 'Nagaon Beach',
+                        category: 'Beach & Water Sports',
+                        distance: '5.0 km',
+                        image: '../images/attractions/nagaon_beach.png'
+                    },
+                    {
+                        name: 'Kanakheshwar Hill Temple',
+                        category: 'Holy Place & Beautiful Place',
+                        distance: '12 km',
+                        image: '../images/attractions/kanakheshwar_temple.png'
+                    },
+                    {
+                        name: 'Birla Ganesh Temple (Salav)',
+                        category: 'Holy Place',
+                        distance: '20 km',
+                        image: '../images/attractions/birla_temple.png'
+                    }
                 ]
             },
             'kashid-tembhode': {
@@ -648,6 +709,32 @@
                     '🏖️ Kashid Beach - 4.5 km',
                     '🌊 River - 100 m',
                     '🏔️ Fansad Dam - 3 km'
+                ],
+                attractions: [
+                    {
+                        name: 'Kashid Beach',
+                        category: 'Beach & Beautiful Place',
+                        distance: '4.5 km',
+                        image: '../images/attractions/kashid_beach.png'
+                    },
+                    {
+                        name: 'Phansad Wildlife Sanctuary & Dam',
+                        category: 'Nature & Beautiful Place',
+                        distance: '3.0 km',
+                        image: '../images/attractions/phansad_sanctuary.png'
+                    },
+                    {
+                        name: 'Birla Ganesh Temple (Salav)',
+                        category: 'Holy Place',
+                        distance: '14 km',
+                        image: '../images/attractions/birla_temple.png'
+                    },
+                    {
+                        name: 'Murud Janjira Sea Fort',
+                        category: 'Historical Fort & Tourist Place',
+                        distance: '18 km',
+                        image: '../images/attractions/murud_janjira.png'
+                    }
                 ]
             },
             'nirman-valley': {
@@ -670,6 +757,32 @@
                     '🛍️ Borli-Mandla Market – 1.5 km',
                     '🌴 Peaceful Natural Surroundings',
                     '📜 Clear Title Property'
+                ],
+                attractions: [
+                    {
+                        name: 'Kashid Beach',
+                        category: 'Beach & Beautiful Place',
+                        distance: '10 km',
+                        image: '../images/attractions/kashid_beach.png'
+                    },
+                    {
+                        name: 'Phansad Wildlife Sanctuary & Dam',
+                        category: 'Nature & Beautiful Place',
+                        distance: '4.0 km',
+                        image: '../images/attractions/phansad_sanctuary.png'
+                    },
+                    {
+                        name: 'Birla Ganesh Temple (Salav)',
+                        category: 'Holy Place',
+                        distance: '16 km',
+                        image: '../images/attractions/birla_temple.png'
+                    },
+                    {
+                        name: 'Murud Janjira Sea Fort',
+                        category: 'Historical Fort & Tourist Place',
+                        distance: '20 km',
+                        image: '../images/attractions/murud_janjira.png'
+                    }
                 ]
             }
         };
@@ -729,6 +842,30 @@
                 li.innerHTML = `<span>📍</span> ${item}`;
                 landmarksUl.appendChild(li);
             });
+
+            // Populate nearby attractions list
+            const attractionsGrid = document.getElementById('project-attractions-grid');
+            attractionsGrid.innerHTML = '';
+            if (project.attractions && project.attractions.length > 0) {
+                project.attractions.forEach(attraction => {
+                    const card = document.createElement('div');
+                    card.className = 'attraction-card';
+                    card.innerHTML = `
+                        <div class="attraction-img-wrapper">
+                            <span class="attraction-badge">${attraction.category}</span>
+                            <img src="${attraction.image}" alt="${attraction.name}" class="attraction-img" loading="lazy">
+                        </div>
+                        <div class="attraction-info">
+                            <h3 class="attraction-name">${attraction.name}</h3>
+                            <span class="attraction-distance">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="attraction-pin-icon"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                ${attraction.distance} from site
+                            </span>
+                        </div>
+                    `;
+                    attractionsGrid.appendChild(card);
+                });
+            }
             
             // Handle enquiry form disabled state for Sold Out projects
             if (project.soldOut) {
