@@ -3805,6 +3805,177 @@ a.contact-value:hover {
   }
 }
 
+/* ==========================================================================
+   33. Service List Alternating Row Layout
+   ========================================================================== */
+.services-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  margin-top: 2rem;
+}
+
+.service-item-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Alternate order for even rows */
+.service-item-row:nth-child(even) .service-text-col {
+  order: 2;
+}
+.service-item-row:nth-child(even) .service-card-col {
+  order: 1;
+}
+
+.service-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.service-title-item {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.service-text-desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.service-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.service-features-list li {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+}
+
+.service-check-icon {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+/* Button style matching the screenshot */
+.service-item-btn {
+  background-color: #0c152b; /* Very dark luxury blue/charcoal */
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.9rem 2.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.service-item-btn:hover {
+  background-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(179, 143, 67, 0.2);
+}
+
+/* Right side Visual Card styling */
+.service-card-col {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.service-visual-card {
+  background-color: #faf6ec; /* Soft warm cream background */
+  border-radius: 20px;
+  padding: 2.2rem;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.service-visual-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(179, 143, 67, 0.1);
+}
+
+.service-card-img-wrapper {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.service-card-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card-label {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: #0c152b;
+  font-weight: 700;
+  margin-top: 1.8rem;
+  text-align: center;
+}
+
+/* Responsive Styles for Service List */
+@media (max-width: 992px) {
+  .services-list-container {
+    gap: 5rem;
+  }
+  
+  .service-item-row {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .service-item-row:nth-child(even) .service-text-col,
+  .service-item-row:nth-child(even) .service-card-col {
+    order: unset;
+  }
+  
+  .service-title-item {
+    font-size: 1.8rem;
+  }
+  
+  .service-visual-card {
+    max-width: 100%;
+  }
+}
+
+
 
 
 

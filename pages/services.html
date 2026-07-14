@@ -111,73 +111,241 @@
                 <p class="services-subtitle" style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; max-width: 700px; margin: 0 auto;">Delivering unparalleled real estate solutions tailored to match your luxury expectations and investment goals.</p>
             </div>
             
-            <!-- Services Grid -->
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem;">
+            <!-- Services List (Alternating Row Layout) -->
+            <div class="services-list-container">
                 
-                <!-- Service Card 1 -->
-                <div class="service-card">
-                    <span class="service-accent-border"></span>
-                    <div class="service-icon-box">
-                        <img src="../images/icons/residential.svg" alt="Residential Projects Icon" class="service-icon" aria-hidden="true">
+                <!-- Service Item 1: Residential Projects -->
+                <div class="service-item-row" id="residential">
+                    <div class="service-text-col">
+                        <h3 class="service-title-item">Residential Projects</h3>
+                        <p class="service-text-desc">Premium residential plotted spaces and custom layouts designed to build your dream sanctuary in prime, serene locations. From gated seaside communities to scenic hilltop estates, we help buyers find the perfect destination to build their dream custom villas or luxury holiday homes.</p>
+                        <ul class="service-features-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Gated Seaside Plotted Communities
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Countryside Farmhouse Layouts
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Modern Infrastructure & Utilities Ready
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Clear Title Legal Documentation & Approvals
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                High-Appreciation Coastal Locations
+                            </li>
+                        </ul>
+                        <button class="service-item-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">View Residential Plots &rarr;</button>
                     </div>
-                    <h3 class="service-card-title">Residential Projects</h3>
-                    <p class="service-card-desc">Premium residential plotted spaces and custom layouts designed to build your dream sanctuary in prime, serene locations.</p>
-                    <button class="btn btn-outline service-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                    <div class="service-card-col">
+                        <div class="service-visual-card">
+                            <div class="service-card-img-wrapper">
+                                <img src="../images/gallery/firstproject1.jpeg" alt="Luxury Plotted Developments" class="service-card-img">
+                            </div>
+                            <h4 class="service-card-label">Luxury Plotted Developments</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service Card 2 -->
-                <div class="service-card">
-                    <span class="service-accent-border"></span>
-                    <div class="service-icon-box">
-                        <img src="../images/icons/commercial.svg" alt="Commercial Spaces Icon" class="service-icon" aria-hidden="true">
+                <!-- Service Item 2: Commercial Spaces -->
+                <div class="service-item-row" id="commercial">
+                    <div class="service-text-col">
+                        <h3 class="service-title-item">Commercial Spaces</h3>
+                        <p class="service-text-desc">Strategically located retail spaces and business zones designed to maximize brand visibility, customer engagement, and commercial growth. From high-street storefronts to premium layout developments, we help clients identify the ideal location based on footfall, local demographics, and corporate objectives.</p>
+                        <ul class="service-features-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                High-Street Retail Stores & Flagship Showrooms
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Shopping Mall Layouts & Boutique Plazas
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Strategic Highway Commercial Plotting
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Integrated Mixed-Use Commercial Spaces
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Leasing, Acquisition & Corporate Investments
+                            </li>
+                        </ul>
+                        <button class="service-item-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">View Commercial Plots &rarr;</button>
                     </div>
-                    <h3 class="service-card-title">Commercial Spaces</h3>
-                    <p class="service-card-desc">Elite commercial layouts, retail plazas, and office settings tailored for business growth, visibility, and high traffic volumes.</p>
-                    <button class="btn btn-outline service-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                    <div class="service-card-col">
+                        <div class="service-visual-card">
+                            <div class="service-card-img-wrapper">
+                                <img src="../images/gallery/secondprojectimages3.jpeg" alt="Maximize Visibility & Footfall" class="service-card-img">
+                            </div>
+                            <h4 class="service-card-label">Maximize Visibility & Footfall</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service Card 3 -->
-                <div class="service-card">
-                    <span class="service-accent-border"></span>
-                    <div class="service-icon-box">
-                        <img src="../images/icons/villa.svg" alt="Premium Villas Icon" class="service-icon" aria-hidden="true">
+                <!-- Service Item 3: Premium Villas -->
+                <div class="service-item-row" id="villas">
+                    <div class="service-text-col">
+                        <h3 class="service-title-item">Premium Villas</h3>
+                        <p class="service-text-desc">Bespoke luxury farmhouses and holiday villas built to mirror your success and fine taste. Our team coordinates design architectural blueprints, landscape master planning, and structural execution to deliver turn-key premium estates featuring panoramic views and modern comforts.</p>
+                        <ul class="service-features-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Turn-key Villa Architecture & Construction
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Scenic Valley-Facing Holiday Farmhouses
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Private Swimming Pools & Landscaped Gardens
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Sustainable Smart Home Features & Automation
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Premium Interior Design & Execution
+                            </li>
+                        </ul>
+                        <button class="service-item-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire About Villas &rarr;</button>
                     </div>
-                    <h3 class="service-card-title">Premium Villas</h3>
-                    <p class="service-card-desc">Bespoke luxury farmhouses and private villas built with elite aesthetics, panoramic valley views, and modern comforts.</p>
-                    <button class="btn btn-outline service-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                    <div class="service-card-col">
+                        <div class="service-visual-card">
+                            <div class="service-card-img-wrapper">
+                                <img src="../images/gallery/thirdprojectimages1.jpeg" alt="Bespoke Turn-Key Estates" class="service-card-img">
+                            </div>
+                            <h4 class="service-card-label">Bespoke Turn-Key Estates</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service Card 4 -->
-                <div class="service-card">
-                    <span class="service-accent-border"></span>
-                    <div class="service-icon-box">
-                        <img src="../images/icons/land.svg" alt="Land Development Icon" class="service-icon" aria-hidden="true">
+                <!-- Service Item 4: Land Development -->
+                <div class="service-item-row" id="land-development">
+                    <div class="service-text-col">
+                        <h3 class="service-title-item">Land Development</h3>
+                        <p class="service-text-desc">Professional land layout development, gated community staging, and infrastructure engineering. We transform raw coastal and countryside lands into fully certified, legally compliant, utility-ready gated communities featuring metalled roads, electricity grids, and drainage grids.</p>
+                        <ul class="service-features-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Gated Community Boundary Wall & Security
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Concrete & Tar Road Infrastructure Layouts
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Underground Electrical Grids & Water Supply
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Landscape Architecture & Public Open Spaces
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Local Authority Compliances & Sanctions
+                            </li>
+                        </ul>
+                        <button class="service-item-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Learn About Development &rarr;</button>
                     </div>
-                    <h3 class="service-card-title">Land Development</h3>
-                    <p class="service-card-desc">Sustainable gated plotting, infrastructure design, utilities deployment, and municipal road integration for countryside estates.</p>
-                    <button class="btn btn-outline service-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                    <div class="service-card-col">
+                        <div class="service-visual-card">
+                            <div class="service-card-img-wrapper">
+                                <img src="../images/gallery/fourthprojectimages1.jpg" alt="Certified Infrastructure Ready" class="service-card-img">
+                            </div>
+                            <h4 class="service-card-label">Certified Infrastructure Ready</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service Card 5 -->
-                <div class="service-card">
-                    <span class="service-accent-border"></span>
-                    <div class="service-icon-box">
-                        <img src="../images/icons/investment.svg" alt="Property Investment Icon" class="service-icon" aria-hidden="true">
+                <!-- Service Item 5: Property Investment -->
+                <div class="service-item-row" id="investment">
+                    <div class="service-text-col">
+                        <h3 class="service-title-item">Property Investment</h3>
+                        <p class="service-text-desc">Strategic property acquisition and advisory services structured to deliver high capital appreciation. We conduct detailed market analysis, physical feasibility checks, and future appreciation forecasts to assist investors in building a high-yielding real estate portfolio in Maharashtra's fastest-growing zones.</p>
+                        <ul class="service-features-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                High-Yield Land Acquisition Strategies
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Coastal Tourism Growth Corridor Analysis
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Title Search & Complete Legal Verification
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Portfolio Expansion & Asset Management
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Structured Resale & Exit Strategy Planning
+                            </li>
+                        </ul>
+                        <button class="service-item-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Get Investment Advisory &rarr;</button>
                     </div>
-                    <h3 class="service-card-title">Property Investment</h3>
-                    <p class="service-card-desc">Strategic acquisition advice, asset management, and portfolio expansion consultation optimized for high yield metrics.</p>
-                    <button class="btn btn-outline service-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                    <div class="service-card-col">
+                        <div class="service-visual-card">
+                            <div class="service-card-img-wrapper">
+                                <img src="../images/gallery/firstproject2.jpeg" alt="Secure & High-Yield Investments" class="service-card-img">
+                            </div>
+                            <h4 class="service-card-label">Secure & High-Yield Investments</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service Card 6 -->
-                <div class="service-card">
-                    <span class="service-accent-border"></span>
-                    <div class="service-icon-box">
-                        <img src="../images/icons/consultation.svg" alt="Project Consultation Icon" class="service-icon" aria-hidden="true">
+                <!-- Service Item 6: Project Consultation -->
+                <div class="service-item-row" id="consultation">
+                    <div class="service-text-col">
+                        <h3 class="service-title-item">Project Consultation</h3>
+                        <p class="service-text-desc">Streamlined navigation of real estate compliance, legal titles, and government approvals. From RERA registrations to Town Planning sanctions and non-agricultural (NA) land certifications, we ensure your development is 100% compliant with zero legal risks.</p>
+                        <ul class="service-features-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Non-Agricultural (NA) Land Certification
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                MahaRERA Registration & Compliance Advisory
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Collector NA & Town Planning Approvals
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Title Verification & Search Reports
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="service-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Legal Liaison & Document Registration
+                            </li>
+                        </ul>
+                        <button class="service-item-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Schedule Legal Check &rarr;</button>
                     </div>
-                    <h3 class="service-card-title">Project Consultation</h3>
-                    <p class="service-card-desc">Comprehensive legal, regulatory RERA approvals guidance, structural feasibility checks, and architecture blueprints analysis.</p>
-                    <button class="btn btn-outline service-btn" onclick="document.getElementById('enquiry-popup').style.display='flex'">Enquire Now</button>
+                    <div class="service-card-col">
+                        <div class="service-visual-card">
+                            <div class="service-card-img-wrapper">
+                                <img src="../images/gallery/secondprojectimages1.jpeg" alt="100% Verified Compliance" class="service-card-img">
+                            </div>
+                            <h4 class="service-card-label">100% Verified Compliance</h4>
+                        </div>
+                    </div>
                 </div>
 
             </div>
