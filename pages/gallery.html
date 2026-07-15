@@ -356,6 +356,28 @@
             }
         }
     </style>
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Structured Data: JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nirmandevelopers.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Project Gallery",
+        "item": "https://nirmandevelopers.com/pages/gallery.html"
+      }]
+    }
+    </script>
 </head>
 <body>
 
@@ -367,7 +389,7 @@
             
             <!-- Company Logo Placement -->
             <a href="../index.html" class="logo-link" aria-label="Nirman Developers Homepage">
-                <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="logo-image">
+                <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="logo-image" decoding="async" width="1080" height="1007">
             </a>
             
             <!-- Desktop Navigation Menu -->
@@ -474,7 +496,7 @@
                 <!-- Kashid-Borli Seaside Plots: Photos -->
                 <div class="gallery-card filter-item photo" data-project="kashid-borli" onclick="openLightbox('../images/gallery/firstproject1.webp', 'Kashid-Borli Seaside Plots - Site View')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject1.webp" alt="Kashid-Borli Seaside Plots Site View" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/firstproject1.webp" alt="Kashid-Borli Seaside Plots Site View" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -484,7 +506,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="kashid-borli" onclick="openLightbox('../images/gallery/firstproject2.webp', 'Kashid-Borli Seaside Plots - Plot Layout')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject2.webp" alt="Kashid-Borli Seaside Plots Plot Layout" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/firstproject2.webp" alt="Kashid-Borli Seaside Plots Plot Layout" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -494,7 +516,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="kashid-borli" onclick="openLightbox('../images/gallery/firstprojectimage3.webp', 'Kashid-Borli Seaside Plots - Scenic View')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstprojectimage3.webp" alt="Kashid-Borli Seaside Plots Scenic View" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/firstprojectimage3.webp" alt="Kashid-Borli Seaside Plots Scenic View" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -505,7 +527,7 @@
                 <!-- Kashid-Borli Seaside Plots: Videos -->
                 <div class="gallery-card filter-item video" data-project="kashid-borli" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Kashid-Borli Plots - Site Walkthrough')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject1.webp" alt="Kashid-Borli Walkthrough Tour Cover" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/firstproject1.webp" alt="Kashid-Borli Walkthrough Tour Cover" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -520,7 +542,7 @@
 
                 <div class="gallery-card filter-item video" data-project="kashid-borli" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Kashid-Borli Plots - Aerial Overview')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject2.webp" alt="Kashid-Borli Aerial Overview Cover" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/firstproject2.webp" alt="Kashid-Borli Aerial Overview Cover" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -535,7 +557,7 @@
 
                 <div class="gallery-card filter-item video" data-project="kashid-borli" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Kashid-Borli Plots - Road Connectivity')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstprojectimage3.webp" alt="Kashid-Borli Road Connectivity Cover" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/firstprojectimage3.webp" alt="Kashid-Borli Road Connectivity Cover" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -551,7 +573,7 @@
                 <!-- Ready Farmhouse Project – Alibaug: Photos -->
                 <div class="gallery-card filter-item photo" data-project="ready-farmhouse-alibaug" onclick="openLightbox('../images/gallery/fifthprojectimages1.webp', 'Ready Farmhouse Project – Alibaug - Exterior View')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/fifthprojectimages1.webp" alt="Ready Farmhouse Project – Alibaug Exterior View" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/fifthprojectimages1.webp" alt="Ready Farmhouse Project – Alibaug Exterior View" class="gallery-img" loading="lazy" decoding="async" width="1024" height="1024">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -561,7 +583,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="ready-farmhouse-alibaug" onclick="openLightbox('../images/gallery/fifthprojectimages2.webp', 'Ready Farmhouse Project – Alibaug - Pool & Villa View')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/fifthprojectimages2.webp" alt="Ready Farmhouse Project – Alibaug Pool & Villa View" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/fifthprojectimages2.webp" alt="Ready Farmhouse Project – Alibaug Pool & Villa View" class="gallery-img" loading="lazy" decoding="async" width="1024" height="1024">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -572,7 +594,7 @@
                 <!-- Alibaug Kurul Plots: Photos -->
                 <div class="gallery-card filter-item photo" data-project="alibaug-kurul" onclick="openLightbox('../images/gallery/secondprojectimages1.webp', 'Alibaug Kurul Plots - Site View')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages1.webp" alt="Alibaug Kurul Plots Site View" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages1.webp" alt="Alibaug Kurul Plots Site View" class="gallery-img" loading="lazy" decoding="async" width="884" height="1600">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -582,7 +604,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="alibaug-kurul" onclick="openLightbox('../images/gallery/secondprojectimages2.webp', 'Alibaug Kurul Plots - Entrance')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages2.webp" alt="Alibaug Kurul Plots Entrance" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages2.webp" alt="Alibaug Kurul Plots Entrance" class="gallery-img" loading="lazy" decoding="async" width="1280" height="561">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -592,7 +614,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="alibaug-kurul" onclick="openLightbox('../images/gallery/secondprojectimages3.webp', 'Alibaug Kurul Plots - Plot View')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages3.webp" alt="Alibaug Kurul Plots Plot View" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages3.webp" alt="Alibaug Kurul Plots Plot View" class="gallery-img" loading="lazy" decoding="async" width="1280" height="561">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -602,7 +624,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="alibaug-kurul" onclick="openLightbox('../images/gallery/secondprojectimages4.webp', 'Alibaug Kurul Plots - Development')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages4.webp" alt="Alibaug Kurul Plots Development" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages4.webp" alt="Alibaug Kurul Plots Development" class="gallery-img" loading="lazy" decoding="async" width="1280" height="561">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -612,7 +634,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="alibaug-kurul" onclick="openLightbox('../images/gallery/secondprojectimages5.webp', 'Alibaug Kurul Plots - Pathways')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages5.webp" alt="Alibaug Kurul Plots Pathways" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages5.webp" alt="Alibaug Kurul Plots Pathways" class="gallery-img" loading="lazy" decoding="async" width="1280" height="561">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -622,7 +644,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="alibaug-kurul" onclick="openLightbox('../images/gallery/secondprojectimages6.webp', 'Alibaug Kurul Plots - Boundary')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages6.webp" alt="Alibaug Kurul Plots Boundary" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages6.webp" alt="Alibaug Kurul Plots Boundary" class="gallery-img" loading="lazy" decoding="async" width="1280" height="561">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -632,7 +654,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="alibaug-kurul" onclick="openLightbox('../images/gallery/secondprojectimages7.webp', 'Alibaug Kurul Plots - Open Space')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages7.webp" alt="Alibaug Kurul Plots Open Space" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages7.webp" alt="Alibaug Kurul Plots Open Space" class="gallery-img" loading="lazy" decoding="async" width="1280" height="561">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -643,7 +665,7 @@
                 <!-- Kashid-Tembhode Plots: Photos -->
                 <div class="gallery-card filter-item photo" data-project="kashid-tembhode" onclick="openLightbox('../images/gallery/thirdprojectimages1.webp', 'Kashid-Tembhode Plots - View 1')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/thirdprojectimages1.webp" alt="Kashid-Tembhode Plots View 1" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/thirdprojectimages1.webp" alt="Kashid-Tembhode Plots View 1" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -653,7 +675,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="kashid-tembhode" onclick="openLightbox('../images/gallery/thirdprojectimages2.webp', 'Kashid-Tembhode Plots - View 2')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/thirdprojectimages2.webp" alt="Kashid-Tembhode Plots View 2" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/thirdprojectimages2.webp" alt="Kashid-Tembhode Plots View 2" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -663,7 +685,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="kashid-tembhode" onclick="openLightbox('../images/gallery/thirdprojectimages3.webp', 'Kashid-Tembhode Plots - View 3')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/thirdprojectimages3.webp" alt="Kashid-Tembhode Plots View 3" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/thirdprojectimages3.webp" alt="Kashid-Tembhode Plots View 3" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -673,7 +695,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="kashid-tembhode" onclick="openLightbox('../images/gallery/thirdprojectimages4.webp', 'Kashid-Tembhode Plots - View 4')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/thirdprojectimages4.webp" alt="Kashid-Tembhode Plots View 4" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/thirdprojectimages4.webp" alt="Kashid-Tembhode Plots View 4" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -683,7 +705,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="kashid-tembhode" onclick="openLightbox('../images/gallery/thirdprojectimages5.webp', 'Kashid-Tembhode Plots - View 5')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/thirdprojectimages5.webp" alt="Kashid-Tembhode Plots View 5" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/thirdprojectimages5.webp" alt="Kashid-Tembhode Plots View 5" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -693,7 +715,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="kashid-tembhode" onclick="openLightbox('../images/gallery/thirdprojectimages6.webp', 'Kashid-Tembhode Plots - View 6')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/thirdprojectimages6.webp" alt="Kashid-Tembhode Plots View 6" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/thirdprojectimages6.webp" alt="Kashid-Tembhode Plots View 6" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -704,7 +726,7 @@
                 <!-- Kashid-Tembhode Plots: Videos -->
                 <div class="gallery-card filter-item video" data-project="kashid-tembhode" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Kashid-Tembhode Plots - Site Walkthrough')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/thirdprojectimages1.webp" alt="Kashid-Tembhode Walkthrough Cover" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/thirdprojectimages1.webp" alt="Kashid-Tembhode Walkthrough Cover" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -720,7 +742,7 @@
                 <!-- Alibaug Kurul Plots: Videos -->
                 <div class="gallery-card filter-item video" data-project="alibaug-kurul" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Alibaug Kurul Plots - Video Walkthrough')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/secondprojectimages1.webp" alt="Alibaug Kurul Plots Walkthrough Cover" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/secondprojectimages1.webp" alt="Alibaug Kurul Plots Walkthrough Cover" class="gallery-img" loading="lazy" decoding="async" width="884" height="1600">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -736,7 +758,7 @@
                 <!-- Nirman Valley: Photos -->
                 <div class="gallery-card filter-item photo" data-project="nirman-valley" onclick="openLightbox('../images/gallery/fourthprojectimages1.webp', 'Nirman Valley - Premium Farmhouse Plots Near Kashid Beach')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/fourthprojectimages1.webp" alt="Nirman Valley Premium Farmhouse Plots Near Kashid Beach" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/fourthprojectimages1.webp" alt="Nirman Valley Premium Farmhouse Plots Near Kashid Beach" class="gallery-img" loading="lazy" decoding="async" width="682" height="1024">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -746,7 +768,7 @@
 
                 <div class="gallery-card filter-item photo" data-project="nirman-valley" onclick="openLightbox('../images/gallery/fourthprojectimages2.webp', 'Nirman Valley - Launch Announcement Flyer')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/fourthprojectimages2.webp" alt="Nirman Valley Launch Announcement Flyer" class="gallery-img" loading="lazy">
+                        <img src="../images/gallery/fourthprojectimages2.webp" alt="Nirman Valley Launch Announcement Flyer" class="gallery-img" loading="lazy" decoding="async" width="682" height="1024">
                     </div>
                     <div class="gallery-card-body">
                         <span class="gallery-card-tag">Photo / Render</span>
@@ -799,7 +821,7 @@
                 <!-- Col 1: Brand Info -->
                 <div class="footer-col brand-col">
                     <a href="../index.html" class="footer-logo-link" aria-label="Nirman Developers Homepage">
-                        <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="footer-logo">
+                        <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="footer-logo" decoding="async" width="1080" height="1007">
                     </a>
                     <p class="footer-desc">Crafting premium residential developments, luxury countryside villas, and commercial spaces with architectural innovation, complete legal compliance, and unmatched quality since inception.</p>
                     <div class="social-links">
@@ -1024,7 +1046,7 @@
         const modalCaption = document.getElementById('modal-caption');
         
         function openLightbox(imageSrc, captionText) {
-            modalBody.innerHTML = `<img src="${imageSrc}" alt="${captionText}">`;
+            modalBody.innerHTML = `<img src="${imageSrc}" alt="${captionText}" decoding="async" loading="lazy" width="1200" height="800">`;
             modalCaption.innerText = captionText;
             modal.style.display = 'flex';
             modal.setAttribute('aria-hidden', 'false');

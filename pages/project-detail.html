@@ -326,6 +326,33 @@
             }
         }
     </style>
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Structured Data: JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nirmandevelopers.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Featured Projects",
+        "item": "https://nirmandevelopers.com/index.html#projects"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Project Details",
+        "item": "https://nirmandevelopers.com/pages/project-detail.html"
+      }]
+    }
+    </script>
 </head>
 <body>
 
@@ -337,7 +364,7 @@
             
             <!-- Company Logo Placement -->
             <a href="../index.html" class="logo-link" aria-label="Nirman Developers Homepage">
-                <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="logo-image">
+                <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="logo-image" decoding="async" width="1080" height="1007">
             </a>
             
             <!-- Desktop Navigation Menu -->
@@ -552,7 +579,7 @@
                 <!-- Col 1: Brand Info -->
                 <div class="footer-col brand-col">
                     <a href="../index.html" class="footer-logo-link" aria-label="Nirman Developers Homepage">
-                        <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="footer-logo">
+                        <img src="../images/logo/logo.webp" alt="Nirman Developers Logo" class="footer-logo" decoding="async" width="1080" height="1007">
                     </a>
                     <p class="footer-desc">Crafting premium residential developments, luxury countryside villas, and commercial spaces with architectural innovation, complete legal compliance, and unmatched quality since inception.</p>
                 </div>
@@ -983,7 +1010,7 @@
                     card.innerHTML = `
                         <div class="attraction-img-wrapper">
                             <span class="attraction-badge">${attraction.category}</span>
-                            <img src="${attraction.image}" alt="${attraction.name}" class="attraction-img" loading="lazy">
+                            <img src="${attraction.image}" alt="${attraction.name}" class="attraction-img" loading="lazy" decoding="async" width="400" height="250">
                         </div>
                         <div class="attraction-info">
                             <h3 class="attraction-name">${attraction.name}</h3>
