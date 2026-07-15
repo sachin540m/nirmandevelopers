@@ -3183,8 +3183,13 @@ a.contact-value:hover {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 3rem 2rem;
+  }
+
+  .brand-col,
+  .contact-col {
+    grid-column: span 2;
   }
 
   .footer-logo {
