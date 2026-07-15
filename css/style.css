@@ -33,7 +33,7 @@
   background-position: center;
   background-repeat: no-repeat;
   /* Dual background fallback: tries local directory first, then high-fidelity Unsplash placeholder */
-  background-image: url('../images/hero/hero.jpg'), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+  background-image: url('../images/hero/hero.webp'), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
   animation: heroBgZoom 20s ease-out infinite alternate;
 }
 
