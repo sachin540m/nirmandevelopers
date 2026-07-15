@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Details | Nirman Developers</title>
+    <meta name="description" content="Explore the premium real estate projects and residential plotted communities developed by Nirman Developers in Alibaug and Kashid Beach.">
+    <meta name="keywords" content="Alibaug project details, Kashid beach plots, ready farmhouse details, gated community land">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nirmandevelopers.com/pages/project-detail.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nirmandevelopers.com/pages/project-detail.html">
+    <meta property="og:title" content="Project Details | Nirman Developers">
+    <meta property="og:description" content="Explore the premium real estate projects and residential plotted communities developed by Nirman Developers in Alibaug and Kashid Beach.">
+    <meta property="og:image" content="https://nirmandevelopers.com/images/logo/logo.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nirmandevelopers.com/pages/project-detail.html">
+    <meta property="twitter:title" content="Project Details | Nirman Developers">
+    <meta property="twitter:description" content="Explore the premium real estate projects and residential plotted communities developed by Nirman Developers in Alibaug and Kashid Beach.">
+    <meta property="twitter:image" content="https://nirmandevelopers.com/images/logo/logo.webp">
     
     <!-- Link to Header Styles (Design System Core Included) -->
     <link rel="stylesheet" href="../css/header.css">
@@ -893,6 +911,25 @@
             
             // Populate basic page tags
             document.title = `${project.name} | Nirman Developers`;
+            
+            // Dynamic SEO description and canonical link updates
+            const descriptionMeta = document.querySelector('meta[name="description"]');
+            if (descriptionMeta) {
+                descriptionMeta.setAttribute('content', project.description);
+            }
+            const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+            if (ogDescriptionMeta) {
+                ogDescriptionMeta.setAttribute('content', project.description);
+            }
+            const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+            if (ogTitleMeta) {
+                ogTitleMeta.setAttribute('content', `${project.name} | Nirman Developers`);
+            }
+            const canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (canonicalLink) {
+                canonicalLink.setAttribute('href', `https://nirmandevelopers.com/pages/project-detail.html?project=${projectSlug}`);
+            }
+
             document.getElementById('project-hero-bg').style.backgroundImage = `url('${project.image}')`;
             
             // Label status & Sold Out settings
