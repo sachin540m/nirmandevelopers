@@ -1410,7 +1410,17 @@
                 canonicalLink.setAttribute('href', `https://nirmandevelopers.com/pages/project-detail.html?project=${projectSlug}`);
             }
 
-            document.getElementById('project-hero-bg').style.backgroundImage = `url('${project.image}')`;
+            const heroBg = document.getElementById('project-hero-bg');
+            heroBg.style.backgroundImage = `url('${project.image}')`;
+            if (projectSlug === 'nirman-valley') {
+                heroBg.style.backgroundSize = 'contain';
+                heroBg.style.backgroundColor = '#050811';
+                heroBg.style.backgroundPosition = 'center';
+            } else {
+                heroBg.style.backgroundSize = 'cover';
+                heroBg.style.backgroundColor = 'transparent';
+                heroBg.style.backgroundPosition = 'center';
+            }
             
             // Label status & Sold Out settings
             const label = document.getElementById('project-pretitle-label');
