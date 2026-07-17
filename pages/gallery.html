@@ -272,13 +272,16 @@
         
         .gallery-modal-content {
             position: relative;
-            max-width: 900px;
-            width: 100%;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow-heavy);
+            display: flex;
+            flex-direction: column;
             animation: modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         
@@ -299,16 +302,16 @@
             background: rgba(255, 255, 255, 0.1);
             border: none;
             color: #ffffff;
-            font-size: 2rem;
-            width: 44px;
-            height: 44px;
+            font-size: 1.8rem;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             line-height: 1;
-            z-index: 10;
+            z-index: 12;
             transition: var(--transition-fast);
         }
         
@@ -316,31 +319,89 @@
             background: var(--accent-gold);
             color: var(--text-dark);
         }
+
+        /* Glassmorphic zoom controls style */
+        .modal-zoom-controls {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(5, 8, 17, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.3rem;
+            border-radius: 20px;
+            z-index: 12;
+        }
+
+        .modal-zoom-btn {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.1rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-fast);
+        }
+
+        .modal-zoom-btn:hover {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+        }
         
         .modal-body {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
             background: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 16:9 box ratio style specifically for videos */
+        .modal-body.video-aspect {
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            width: 900px;
+            max-width: 90vw;
         }
         
-        .modal-body img, .modal-body video, .modal-body iframe {
+        .modal-body.video-aspect video, 
+        .modal-body.video-aspect iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
             border: none;
         }
         
+        .modal-body img {
+            display: block;
+            max-width: 100%;
+            max-height: 75vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        
         .modal-caption {
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 2rem;
             color: var(--text-primary);
             font-family: var(--font-serif);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
+            z-index: 10;
         }
         
         @media (max-width: 768px) {
@@ -495,35 +556,6 @@
             <div class="gallery-grid" id="gallery-grid">
                 
                 <!-- Premium Farm Plots Near Kashid Beach & Borli Market: Photos -->
-                <div class="gallery-card filter-item photo" data-project="kashid-borli" onclick="openLightbox('../images/gallery/firstproject1.webp', 'Premium Farm Plots - Site View')">
-                    <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject1.webp" alt="Premium Farm Plots Site View" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
-                    </div>
-                    <div class="gallery-card-body">
-                        <span class="gallery-card-tag">Photo / Render</span>
-                        <h3 class="gallery-card-title">Premium Farm Plots - Site View</h3>
-                    </div>
-                </div>
-
-                <div class="gallery-card filter-item photo" data-project="kashid-borli" onclick="openLightbox('../images/gallery/firstproject2.webp', 'Premium Farm Plots - Plot Layout')">
-                    <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject2.webp" alt="Premium Farm Plots Plot Layout" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
-                    </div>
-                    <div class="gallery-card-body">
-                        <span class="gallery-card-tag">Photo / Render</span>
-                        <h3 class="gallery-card-title">Premium Farm Plots - Layout</h3>
-                    </div>
-                </div>
-
-                <div class="gallery-card filter-item photo" data-project="kashid-borli" onclick="openLightbox('../images/gallery/firstprojectimage3.webp', 'Premium Farm Plots - Scenic View')">
-                    <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstprojectimage3.webp" alt="Premium Farm Plots Scenic View" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
-                    </div>
-                    <div class="gallery-card-body">
-                        <span class="gallery-card-tag">Photo / Render</span>
-                        <h3 class="gallery-card-title">Premium Farm Plots - Scenic View</h3>
-                    </div>
-                </div>
 
                 <div class="gallery-card filter-item photo" data-project="kashid-borli" onclick="openLightbox('../images/gallery/firstproject3.webp', 'Premium Farm Plots - Site Entrance')">
                     <div class="gallery-media-wrapper">
@@ -618,7 +650,7 @@
                 <!-- Premium Farm Plots Near Kashid Beach & Borli Market: Videos -->
                 <div class="gallery-card filter-item video" data-project="kashid-borli" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Premium Farm Plots - Site Walkthrough')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject1.webp" alt="Premium Farm Plots Walkthrough Tour Cover" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
+                        <img src="../images/gallery/firstproject3.webp" alt="Premium Farm Plots Walkthrough Tour Cover" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -633,7 +665,7 @@
 
                 <div class="gallery-card filter-item video" data-project="kashid-borli" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Premium Farm Plots - Aerial Overview')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstproject2.webp" alt="Premium Farm Plots Aerial Overview Cover" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
+                        <img src="../images/gallery/firstproject4.webp" alt="Premium Farm Plots Aerial Overview Cover" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -648,7 +680,7 @@
 
                 <div class="gallery-card filter-item video" data-project="kashid-borli" onclick="openVideoPlayer('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Premium Farm Plots - Road Connectivity')">
                     <div class="gallery-media-wrapper">
-                        <img src="../images/gallery/firstprojectimage3.webp" alt="Premium Farm Plots Road Connectivity Cover" class="gallery-img" loading="lazy" decoding="async" width="576" height="1280">
+                        <img src="../images/gallery/firstproject5.webp" alt="Premium Farm Plots Road Connectivity Cover" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <div class="play-icon-triangle"></div>
@@ -867,7 +899,71 @@
                     </div>
                 </div>
 
+                <div class="gallery-card filter-item photo" data-project="nirman-valley" onclick="openLightbox('../images/gallery/fourthprojectimages3.webp', 'Nirman Valley - Internal Roads & Infrastructure')">
+                    <div class="gallery-media-wrapper">
+                        <img src="../images/gallery/fourthprojectimages3.webp" alt="Nirman Valley Internal Roads & Infrastructure" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="gallery-card-tag">Photo / Render</span>
+                        <h3 class="gallery-card-title">Nirman Valley - Internal Roads</h3>
+                    </div>
+                </div>
 
+                <div class="gallery-card filter-item photo" data-project="nirman-valley" onclick="openLightbox('../images/gallery/fourthprojectimages4.webp', 'Nirman Valley - Gated Entrance View')">
+                    <div class="gallery-media-wrapper">
+                        <img src="../images/gallery/fourthprojectimages4.webp" alt="Nirman Valley Gated Entrance View" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="gallery-card-tag">Photo / Render</span>
+                        <h3 class="gallery-card-title">Nirman Valley - Gated Entrance</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-card filter-item photo" data-project="nirman-valley" onclick="openLightbox('../images/gallery/fourthprojectimages5.webp', 'Nirman Valley - Surrounding Hill Scenery')">
+                    <div class="gallery-media-wrapper">
+                        <img src="../images/gallery/fourthprojectimages5.webp" alt="Nirman Valley Surrounding Hill Scenery" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="gallery-card-tag">Photo / Render</span>
+                        <h3 class="gallery-card-title">Nirman Valley - Surrounding Hills</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-card filter-item photo" data-project="nirman-valley" onclick="openLightbox('../images/gallery/fourthprojectimages6.webp', 'Nirman Valley - Demarcated Plot Layout')">
+                    <div class="gallery-media-wrapper">
+                        <img src="../images/gallery/fourthprojectimages6.webp" alt="Nirman Valley Demarcated Plot Layout" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="gallery-card-tag">Photo / Render</span>
+                        <h3 class="gallery-card-title">Nirman Valley - Plot Layout</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-card filter-item photo" data-project="nirman-valley" onclick="openLightbox('../images/gallery/fourthprojectimages7.webp', 'Nirman Valley - Gated Community View')">
+                    <div class="gallery-media-wrapper">
+                        <img src="../images/gallery/fourthprojectimages7.webp" alt="Nirman Valley Gated Community View" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="gallery-card-tag">Photo / Render</span>
+                        <h3 class="gallery-card-title">Nirman Valley - Community View</h3>
+                    </div>
+                </div>
+
+                <!-- Nirman Valley: Videos -->
+                <div class="gallery-card filter-item video" data-project="nirman-valley" onclick="openVideoPlayer('../images/gallery/fourthprojectvideo1.mp4', 'Nirman Valley - Site Walkthrough Video')">
+                    <div class="gallery-media-wrapper">
+                        <img src="../images/gallery/fourthprojectimages3.webp" alt="Nirman Valley Walkthrough Tour Cover" class="gallery-img" loading="lazy" decoding="async" width="1600" height="720">
+                        <div class="video-play-overlay">
+                            <div class="play-btn-circle">
+                                <div class="play-icon-triangle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="gallery-card-tag">Video Tour</span>
+                        <h3 class="gallery-card-title">Nirman Valley Walkthrough Video</h3>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -879,6 +975,11 @@
        ========================================================================== -->
     <div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-modal="true">
         <div class="gallery-modal-content">
+            <div class="modal-zoom-controls" id="modal-zoom-controls" style="display: none;">
+                <button class="modal-zoom-btn" onclick="zoomIn()" aria-label="Zoom In">+</button>
+                <button class="modal-zoom-btn" onclick="zoomOut()" aria-label="Zoom Out">&minus;</button>
+                <button class="modal-zoom-btn" onclick="resetZoom()" aria-label="Reset Zoom">&#x21bb;</button>
+            </div>
             <button class="gallery-modal-close" id="gallery-modal-close" onclick="closeModal()">&times;</button>
             <div class="modal-body" id="modal-body">
                 <!-- Injected via Javascript (Image or Video Tag) -->
@@ -1135,18 +1236,36 @@
         const modal = document.getElementById('gallery-modal');
         const modalBody = document.getElementById('modal-body');
         const modalCaption = document.getElementById('modal-caption');
+        const zoomControls = document.getElementById('modal-zoom-controls');
+        
+        let currentScale = 1;
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0, translateY = 0;
         
         function openLightbox(imageSrc, captionText) {
-            modalBody.innerHTML = `<img src="${imageSrc}" alt="${captionText}" decoding="async" loading="lazy" width="1200" height="800">`;
+            modalBody.classList.remove('video-aspect');
+            if (zoomControls) zoomControls.style.display = 'flex';
+            
+            modalBody.innerHTML = `<img src="${imageSrc}" alt="${captionText}" id="lightbox-img-el" decoding="async" loading="lazy">`;
             modalCaption.innerText = captionText;
             modal.style.display = 'flex';
             modal.setAttribute('aria-hidden', 'false');
+            
+            resetZoom();
+            
+            const imgEl = document.getElementById('lightbox-img-el');
+            if (imgEl) {
+                initZoomPan(imgEl);
+            }
         }
         
         function openVideoPlayer(videoSrc, captionText) {
+            modalBody.classList.add('video-aspect');
+            if (zoomControls) zoomControls.style.display = 'none';
+            
             if (videoSrc.includes('youtube.com') || videoSrc.includes('youtu.be') || videoSrc.includes('embed')) {
                 let embedUrl = videoSrc;
-                // If it's a standard YouTube watch URL, convert it to embed format
                 if (videoSrc.includes('watch?v=')) {
                     const videoId = videoSrc.split('v=')[1]?.split('&')[0];
                     embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
@@ -1155,11 +1274,11 @@
                     embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
                 }
                 modalBody.innerHTML = `
-                    <iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 100%; min-height: 450px; border-radius: 8px; border: none;"></iframe>
+                    <iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 100%; border: none;"></iframe>
                 `;
             } else {
                 modalBody.innerHTML = `
-                    <video controls autoplay style="width: 100%; height: 100%; max-height: 80vh;">
+                    <video controls autoplay style="width: 100%; height: 100%;">
                         <source src="${videoSrc}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1173,9 +1292,73 @@
         function closeModal() {
             modal.style.display = 'none';
             modal.setAttribute('aria-hidden', 'true');
-            modalBody.innerHTML = ''; // Stop video playing
+            modalBody.innerHTML = '';
+            modalBody.classList.remove('video-aspect');
         }
-        
+
+        // Zoom & Drag Pan Engine
+        function zoomIn() {
+            currentScale += 0.25;
+            if (currentScale > 3) currentScale = 3;
+            updateImageTransform();
+        }
+
+        function zoomOut() {
+            currentScale -= 0.25;
+            if (currentScale < 0.5) currentScale = 0.5;
+            updateImageTransform();
+        }
+
+        function resetZoom() {
+            currentScale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateImageTransform();
+        }
+
+        function updateImageTransform() {
+            const img = document.getElementById('lightbox-img-el');
+            if (img) {
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+                img.style.cursor = currentScale > 1 ? 'grab' : 'default';
+            }
+        }
+
+        function initZoomPan(imgEl) {
+            imgEl.addEventListener('mousedown', (e) => {
+                if (currentScale <= 1) return;
+                isDragging = true;
+                imgEl.style.cursor = 'grabbing';
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                e.preventDefault();
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateImageTransform();
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+                if (imgEl) imgEl.style.cursor = currentScale > 1 ? 'grab' : 'default';
+            });
+
+            // Wheel zoom handler
+            imgEl.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    currentScale += 0.1;
+                } else {
+                    currentScale -= 0.1;
+                }
+                currentScale = Math.min(Math.max(0.5, currentScale), 3);
+                updateImageTransform();
+            }, { passive: false });
+        }
+
         // Close modal clicking overlay
         if (modal) {
             modal.addEventListener('click', (e) => {

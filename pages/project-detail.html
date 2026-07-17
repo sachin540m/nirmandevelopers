@@ -325,6 +325,375 @@
                 gap: 1.2rem;
             }
         }
+        
+        /* ==========================================================================
+           Project Photos & Videos Gallery Section Styles
+           ========================================================================== */
+        .project-gallery-section {
+            margin-bottom: 4.5rem;
+            width: 100%;
+        }
+
+        .project-gallery-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .project-gallery-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.6rem;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-gold);
+        }
+
+        /* Tabs styling */
+        .gallery-tabs {
+            display: flex;
+            gap: 1.5rem;
+            border-bottom: 1.5px solid var(--border-color);
+            margin-bottom: 2.5rem;
+            padding-bottom: 0.1rem;
+        }
+
+        .gallery-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.8rem 1.8rem;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-medium);
+            outline: none;
+        }
+
+        .gallery-tab-btn:hover {
+            color: var(--accent-gold);
+        }
+
+        .gallery-tab-btn.active {
+            color: var(--accent-gold);
+        }
+
+        .gallery-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-gold);
+            animation: tabLineGrow 0.3s ease-out forwards;
+        }
+
+        @keyframes tabLineGrow {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Grid styling */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            animation: galleryFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .gallery-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-medium);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-light);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(197, 160, 89, 0.35);
+            box-shadow: var(--shadow-medium), 0 10px 25px rgba(197, 160, 89, 0.05);
+        }
+
+        .gallery-media-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 ratio */
+            overflow: hidden;
+            background: #050811;
+        }
+
+        .gallery-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* Video play button overlay */
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 8, 17, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+            transition: var(--transition-fast);
+        }
+
+        .gallery-card:hover .video-play-overlay {
+            background: rgba(5, 8, 17, 0.3);
+        }
+
+        .play-btn-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-gold), 0 0 0 0 rgba(197, 160, 89, 0.45);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: pulseBtn 2.5s infinite;
+        }
+
+        .gallery-card:hover .play-btn-circle {
+            transform: scale(1.1);
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+        }
+
+        .play-icon-triangle {
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 14px solid var(--bg-primary);
+            margin-left: 3px;
+            transition: var(--transition-fast);
+        }
+
+        .gallery-card:hover .play-icon-triangle {
+            border-left-color: var(--accent-gold);
+        }
+
+        @keyframes pulseBtn {
+            0% { box-shadow: var(--shadow-gold), 0 0 0 0 rgba(197, 160, 89, 0.4); }
+            70% { box-shadow: var(--shadow-gold), 0 0 0 10px rgba(197, 160, 89, 0); }
+            100% { box-shadow: var(--shadow-gold), 0 0 0 0 rgba(197, 160, 89, 0); }
+        }
+
+        .gallery-card-body {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .gallery-card-tag {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .gallery-card-title {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Lightbox CSS */
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 8, 17, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 11000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        .gallery-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            display: flex;
+            flex-direction: column;
+            animation: modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes galleryFadeIn {
+            from { opacity: 0; transform: translateY(12px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .gallery-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ffffff;
+            font-size: 1.8rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            z-index: 12;
+            transition: var(--transition-fast);
+        }
+        
+        .gallery-modal-close:hover {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+        }
+
+        .modal-zoom-controls {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(5, 8, 17, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.3rem;
+            border-radius: 20px;
+            z-index: 12;
+        }
+
+        .modal-zoom-btn {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.1rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-fast);
+        }
+
+        .modal-zoom-btn:hover {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+        }
+        
+        .modal-body {
+            position: relative;
+            width: 100%;
+            background: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-body.video-aspect {
+            padding-top: 56.25%; /* 16:9 ratio */
+            width: 900px;
+            max-width: 90vw;
+        }
+        
+        .modal-body.video-aspect video, 
+        .modal-body.video-aspect iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .modal-body img {
+            display: block;
+            max-width: 100%;
+            max-height: 75vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        
+        .modal-caption {
+            padding: 1.2rem 2rem;
+            color: var(--text-primary);
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .gallery-tabs {
+                gap: 0.8rem;
+                margin-bottom: 2rem;
+            }
+            .gallery-tab-btn {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        }
     </style>
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -430,7 +799,7 @@
        ========================================================================== -->
     <section class="hero-section" id="hero" style="min-height: 65vh; height: 65vh;">
         <div class="hero-bg-container">
-            <div class="hero-bg-image" id="project-hero-bg" style="background-image: url('../images/gallery/firstproject1.webp');" aria-hidden="true"></div>
+            <div class="hero-bg-image" id="project-hero-bg" style="background-image: url('../images/gallery/firstproject8.webp');" aria-hidden="true"></div>
         </div>
         <div class="hero-overlay"></div>
         
@@ -547,6 +916,17 @@
                     <iframe id="project-map-iframe" src="about:blank" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
+            <!-- Project Media Gallery Section -->
+            <div class="project-gallery-section">
+                <h2>Project Photos & Videos</h2>
+                <div class="gallery-tabs">
+                    <button class="gallery-tab-btn active" id="btn-show-photos" onclick="switchProjectGalleryTab('photos')">Photos</button>
+                    <button class="gallery-tab-btn" id="btn-show-videos" onclick="switchProjectGalleryTab('videos')">Videos</button>
+                </div>
+                <div class="gallery-grid" id="project-media-grid">
+                    <!-- Injected dynamically via JS -->
+                </div>
+            </div>
 
             <!-- Nearby Attractions Section -->
             <div class="nearby-attractions-section">
@@ -557,14 +937,7 @@
                 </div>
             </div>
 
-            <!-- Gallery Shortcut Banner -->
-            <div class="gallery-shortcut-banner">
-                <div class="gallery-shortcut-text">
-                    <h3>Explore Project Gallery</h3>
-                    <p>View high-resolution photos and video tours for this project.</p>
-                </div>
-                <a href="gallery.html" class="btn btn-outline" id="project-gallery-link" style="padding: 1rem 2rem;">Go to Gallery</a>
-            </div>
+
 
         </div>
     </section>
@@ -637,9 +1010,26 @@
         </div>
     </footer>
 
+    <!-- ==========================================================================
+       Lightbox & Video Player Modal Overlay
+       ========================================================================== -->
+    <div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="gallery-modal-content">
+            <div class="modal-zoom-controls" id="modal-zoom-controls" style="display: none;">
+                <button class="modal-zoom-btn" onclick="zoomIn()" aria-label="Zoom In">+</button>
+                <button class="modal-zoom-btn" onclick="zoomOut()" aria-label="Zoom Out">&minus;</button>
+                <button class="modal-zoom-btn" onclick="resetZoom()" aria-label="Reset Zoom">&#x21bb;</button>
+            </div>
+            <button class="gallery-modal-close" id="gallery-modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Injected via Javascript (Image or Video Tag) -->
+            </div>
+            <div class="modal-caption" id="modal-caption"></div>
+        </div>
+    </div>
+
     <!-- Header Scripts Link -->
     <script src="../js/header.js"></script>
-    
     <!-- Dynamic Details Populator Engine -->
     <script>
         const projectsData = {
@@ -704,6 +1094,22 @@
                         distance: '15 km',
                         image: '../images/attractions/murud_janjira.webp'
                     }
+                ],
+                photos: [
+                    { src: '../images/gallery/firstproject3.webp', caption: 'Premium Farm Plots - Site Entrance' },
+                    { src: '../images/gallery/firstproject4.webp', caption: 'Premium Farm Plots - Internal Road View' },
+                    { src: '../images/gallery/firstproject5.webp', caption: 'Premium Farm Plots - Surrounding Green Hills' },
+                    { src: '../images/gallery/firstproject6.webp', caption: 'Premium Farm Plots - Gated Demarcation' },
+                    { src: '../images/gallery/firstproject7.webp', caption: 'Premium Farm Plots - Internal Plot Path' },
+                    { src: '../images/gallery/firstproject8.webp', caption: 'Premium Farm Plots - Riverside View' },
+                    { src: '../images/gallery/firstproject9.webp', caption: 'Premium Farm Plots - Natural Landscaping' },
+                    { src: '../images/gallery/firstproject10.webp', caption: 'Premium Farm Plots - Panoramic Countryside' },
+                    { src: '../images/gallery/firstproject11.webp', caption: 'Premium Farm Plots - Property Boundary View' }
+                ],
+                videos: [
+                    { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Premium Farm Plots Tour', cover: '../images/gallery/firstproject3.webp' },
+                    { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Premium Farm Plots Aerial Overview', cover: '../images/gallery/firstproject4.webp' },
+                    { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Premium Farm Plots Road Connectivity', cover: '../images/gallery/firstproject5.webp' }
                 ]
             },
             'ready-farmhouse-alibaug': {
@@ -749,7 +1155,12 @@
                         distance: '4.0 km',
                         image: '../images/attractions/korlai_fort.webp'
                     }
-                ]
+                ],
+                photos: [
+                    { src: '../images/gallery/fifthprojectimages1.webp', caption: 'Ready Farmhouse Project – Alibaug - Exterior View' },
+                    { src: '../images/gallery/fifthprojectimages2.webp', caption: 'Ready Farmhouse Project – Alibaug - Pool & Villa View' }
+                ],
+                videos: []
             },
             'alibaug-kurul': {
                 name: 'Alibaug Kurul Plots',
@@ -807,6 +1218,18 @@
                         distance: '20 km',
                         image: '../images/attractions/birla_temple.webp'
                     }
+                ],
+                photos: [
+                    { src: '../images/gallery/secondprojectimages1.webp', caption: 'Alibaug Kurul Plots - Site View' },
+                    { src: '../images/gallery/secondprojectimages2.webp', caption: 'Alibaug Kurul Plots - Entrance' },
+                    { src: '../images/gallery/secondprojectimages3.webp', caption: 'Alibaug Kurul Plots - Plot View' },
+                    { src: '../images/gallery/secondprojectimages4.webp', caption: 'Alibaug Kurul Plots - Development' },
+                    { src: '../images/gallery/secondprojectimages5.webp', caption: 'Alibaug Kurul Plots - Pathways' },
+                    { src: '../images/gallery/secondprojectimages6.webp', caption: 'Alibaug Kurul Plots - Boundary' },
+                    { src: '../images/gallery/secondprojectimages7.webp', caption: 'Alibaug Kurul Plots - Open Space' }
+                ],
+                videos: [
+                    { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Alibaug Kurul Plots - Video Walkthrough', cover: '../images/gallery/secondprojectimages1.webp' }
                 ]
             },
             'kashid-tembhode': {
@@ -865,12 +1288,23 @@
                         distance: '18 km',
                         image: '../images/attractions/murud_janjira.webp'
                     }
+                ],
+                photos: [
+                    { src: '../images/gallery/thirdprojectimages1.webp', caption: 'Kashid-Tembhode Plots - View 1' },
+                    { src: '../images/gallery/thirdprojectimages2.webp', caption: 'Kashid-Tembhode Plots - View 2' },
+                    { src: '../images/gallery/thirdprojectimages3.webp', caption: 'Kashid-Tembhode Plots - View 3' },
+                    { src: '../images/gallery/thirdprojectimages4.webp', caption: 'Kashid-Tembhode - View 4' },
+                    { src: '../images/gallery/thirdprojectimages5.webp', caption: 'Kashid-Tembhode - View 5' },
+                    { src: '../images/gallery/thirdprojectimages6.webp', caption: 'Kashid-Tembhode - View 6' }
+                ],
+                videos: [
+                    { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Kashid-Tembhode Plots - Site Walkthrough', cover: '../images/gallery/thirdprojectimages1.webp' }
                 ]
             },
             'nirman-valley': {
                 name: 'Nirman Valley',
                 badge: 'Premium Farmhouse Plots',
-                image: '../images/projects/nirman_valley.webp',
+                image: '../images/gallery/fourthprojectimages3.webp',
                 locationName: 'Talavli Village, near Kashid Beach, Alibaug',
                 mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.565882697887!2d72.91500000000002!3d18.503463887425126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be87f9754f9a0c7%3A0xe54ef929c362b874!2zMTjCsDM5JzA1LjQiTiA3MsKwNTMnMTcuOCJF!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin',
                 price: '₹ 2.50+ Lakhs / Guntha',
@@ -904,19 +1338,19 @@
                     {
                         name: 'Our Lady of Mount Carmel Church',
                         category: 'Holy Place (Church)',
-                        distance: '11 km',
+                        distance: '10 km',
                         image: '../images/attractions/korlai_church.webp'
                     },
                     {
                         name: 'Beit El Synagogue (Revdanda)',
                         category: 'Holy Place (Synagogue)',
-                        distance: '14 km',
+                        distance: '12 km',
                         image: '../images/attractions/revdanda_synagogue.webp'
                     },
                     {
                         name: 'Birla Ganesh Temple (Salav)',
                         category: 'Holy Place (Temple)',
-                        distance: '16 km',
+                        distance: '14 km',
                         image: '../images/attractions/birla_temple.webp'
                     },
                     {
@@ -925,13 +1359,27 @@
                         distance: '20 km',
                         image: '../images/attractions/murud_janjira.webp'
                     }
+                ],
+                photos: [
+                    { src: '../images/gallery/fourthprojectimages1.webp', caption: 'Nirman Valley - Premium Farmhouse Plots Near Kashid Beach' },
+                    { src: '../images/gallery/fourthprojectimages2.webp', caption: 'Nirman Valley - Launch Announcement Flyer' },
+                    { src: '../images/gallery/fourthprojectimages3.webp', caption: 'Nirman Valley - Internal Roads & Infrastructure' },
+                    { src: '../images/gallery/fourthprojectimages4.webp', caption: 'Nirman Valley - Gated Entrance View' },
+                    { src: '../images/gallery/fourthprojectimages5.webp', caption: 'Nirman Valley - Surrounding Hill Scenery' },
+                    { src: '../images/gallery/fourthprojectimages6.webp', caption: 'Nirman Valley - Demarcated Plot Layout' },
+                    { src: '../images/gallery/fourthprojectimages7.webp', caption: 'Nirman Valley - Gated Community View' }
+                ],
+                videos: [
+                    { src: '../images/gallery/fourthprojectvideo1.mp4', caption: 'Nirman Valley - Site Walkthrough Video', cover: '../images/gallery/fourthprojectimages3.webp' }
                 ]
             }
         };
 
+        let projectSlug;
+
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            let projectSlug = urlParams.get('project');
+            projectSlug = urlParams.get('project');
             
             // Default to first project if slug is missing or invalid
             if (!projectSlug || !projectsData[projectSlug]) {
@@ -991,8 +1439,7 @@
             // Map location link
             document.getElementById('project-map-iframe').setAttribute('src', project.mapUrl);
             
-            // Gallery redirect button
-            document.getElementById('project-gallery-link').setAttribute('href', `gallery.html?project=${projectSlug}`);
+
             
             // Populate key landmarks list
             const landmarksUl = document.getElementById('project-landmarks-ul');
@@ -1045,6 +1492,228 @@
                     elements[i].disabled = true;
                 }
                 submitBtn.innerText = 'Sold Out';
+            }
+
+            // Populate media gallery
+            renderProjectGallery();
+        });
+
+        // ==========================================================================
+        // Photos & Videos Gallery Controller with Zoom/Pan
+        // ==========================================================================
+        let currentGalleryTab = 'photos';
+
+        function renderProjectGallery() {
+            const grid = document.getElementById('project-media-grid');
+            const tabs = document.querySelector('.gallery-tabs');
+            if (!grid) return;
+
+            const project = projectsData[projectSlug];
+            const section = document.querySelector('.project-gallery-section');
+
+            if ((!project.photos || project.photos.length === 0) && (!project.videos || project.videos.length === 0)) {
+                if (section) section.style.display = 'none';
+                return;
+            }
+            if (section) section.style.display = 'block';
+
+            if (!project.videos || project.videos.length === 0) {
+                if (tabs) tabs.style.display = 'none';
+                currentGalleryTab = 'photos';
+            } else {
+                if (tabs) tabs.style.display = 'flex';
+            }
+
+            grid.innerHTML = '';
+
+            if (currentGalleryTab === 'photos' && project.photos) {
+                project.photos.forEach(photo => {
+                    const card = document.createElement('div');
+                    card.className = 'gallery-card';
+                    card.onclick = () => openLightbox(photo.src, photo.caption);
+                    card.innerHTML = `
+                        <div class="gallery-media-wrapper">
+                            <img src="${photo.src}" alt="${photo.caption}" class="gallery-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="gallery-card-body">
+                            <span class="gallery-card-tag">Photo</span>
+                            <h3 class="gallery-card-title">${photo.caption}</h3>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } else if (currentGalleryTab === 'videos' && project.videos) {
+                project.videos.forEach(video => {
+                    const card = document.createElement('div');
+                    card.className = 'gallery-card';
+                    card.onclick = () => openVideoPlayer(video.src, video.caption);
+                    card.innerHTML = `
+                        <div class="gallery-media-wrapper">
+                            <img src="${video.cover}" alt="${video.caption}" class="gallery-img" loading="lazy" decoding="async">
+                            <div class="video-play-overlay">
+                                <div class="play-btn-circle">
+                                    <div class="play-icon-triangle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-card-body">
+                            <span class="gallery-card-tag">Video Tour</span>
+                            <h3 class="gallery-card-title">${video.caption}</h3>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        window.switchProjectGalleryTab = function(tab) {
+            currentGalleryTab = tab;
+            const photosBtn = document.getElementById('btn-show-photos');
+            const videosBtn = document.getElementById('btn-show-videos');
+            if (photosBtn) photosBtn.classList.toggle('active', tab === 'photos');
+            if (videosBtn) videosBtn.classList.toggle('active', tab === 'videos');
+            renderProjectGallery();
+        };
+
+        // Lightbox Zoom & Pan Engine
+        const modal = document.getElementById('gallery-modal');
+        const modalBody = document.getElementById('modal-body');
+        const modalCaption = document.getElementById('modal-caption');
+        const zoomControls = document.getElementById('modal-zoom-controls');
+        
+        let currentScale = 1;
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0, translateY = 0;
+        
+        window.openLightbox = function(imageSrc, captionText) {
+            modalBody.classList.remove('video-aspect');
+            if (zoomControls) zoomControls.style.display = 'flex';
+            
+            modalBody.innerHTML = `<img src="${imageSrc}" alt="${captionText}" id="lightbox-img-el" decoding="async" loading="lazy">`;
+            modalCaption.innerText = captionText;
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+            
+            resetZoom();
+            
+            const imgEl = document.getElementById('lightbox-img-el');
+            if (imgEl) {
+                initZoomPan(imgEl);
+            }
+        };
+        
+        window.openVideoPlayer = function(videoSrc, captionText) {
+            modalBody.classList.add('video-aspect');
+            if (zoomControls) zoomControls.style.display = 'none';
+            
+            if (videoSrc.includes('youtube.com') || videoSrc.includes('youtu.be') || videoSrc.includes('embed')) {
+                let embedUrl = videoSrc;
+                if (videoSrc.includes('watch?v=')) {
+                    const videoId = videoSrc.split('v=')[1]?.split('&')[0];
+                    embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                } else if (videoSrc.includes('youtu.be/')) {
+                    const videoId = videoSrc.split('youtu.be/')[1]?.split('?')[0];
+                    embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                }
+                modalBody.innerHTML = `
+                    <iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 100%; border: none;"></iframe>
+                `;
+            } else {
+                modalBody.innerHTML = `
+                    <video controls autoplay style="width: 100%; height: 100%;">
+                        <source src="${videoSrc}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                `;
+            }
+            modalCaption.innerText = captionText;
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+        };
+        
+        window.closeModal = function() {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            modalBody.innerHTML = '';
+            modalBody.classList.remove('video-aspect');
+        };
+
+        window.zoomIn = function() {
+            currentScale += 0.25;
+            if (currentScale > 3) currentScale = 3;
+            updateImageTransform();
+        };
+
+        window.zoomOut = function() {
+            currentScale -= 0.25;
+            if (currentScale < 0.5) currentScale = 0.5;
+            updateImageTransform();
+        };
+
+        window.resetZoom = function() {
+            currentScale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateImageTransform();
+        };
+
+        function updateImageTransform() {
+            const img = document.getElementById('lightbox-img-el');
+            if (img) {
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+                img.style.cursor = currentScale > 1 ? 'grab' : 'default';
+            }
+        }
+
+        function initZoomPan(imgEl) {
+            imgEl.addEventListener('mousedown', (e) => {
+                if (currentScale <= 1) return;
+                isDragging = true;
+                imgEl.style.cursor = 'grabbing';
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                e.preventDefault();
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateImageTransform();
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+                if (imgEl) imgEl.style.cursor = currentScale > 1 ? 'grab' : 'default';
+            });
+
+            // Wheel zoom handler
+            imgEl.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    currentScale += 0.1;
+                } else {
+                    currentScale -= 0.1;
+                }
+                currentScale = Math.min(Math.max(0.5, currentScale), 3);
+                updateImageTransform();
+            }, { passive: false });
+        }
+
+        // Close modal clicking overlay
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+        
+        // Close modal pressing Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeModal();
             }
         });
     </script>
