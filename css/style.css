@@ -893,13 +893,17 @@
   font-family: var(--font-sans);
   font-size: 0.9rem;
   color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  position: relative;
+  padding-left: 1.2rem;
   font-weight: 300;
+  line-height: 1.4;
+  text-align: left;
 }
 
 .bullet-triangle {
+  position: absolute;
+  left: 0;
+  top: 0.22rem;
   color: var(--accent-gold);
   font-size: 0.7rem;
   line-height: 1;
