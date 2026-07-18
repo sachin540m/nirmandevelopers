@@ -10,19 +10,27 @@
    ========================================================================== */
 :root {
   /* Colors */
-  --bg-primary: #ffffff;       /* Pure White */
-  --bg-secondary: #f9fafb;     /* Warm Alabaster White */
-  --bg-card: #ffffff;          /* White Card */
-  --accent-gold: #b38f43;      /* Luxury Gold (slightly darker for readable contrast on white) */
-  --accent-gold-hover: #967430;/* Deep Gold Highlight */
-  --text-primary: #111827;     /* Deep Charcoal */
-  --text-muted: #6b7280;       /* Muted Slate Grey */
-  --border-color: rgba(179, 143, 67, 0.15); /* Gold Dust Border */
-  
+  --bg-primary: #ffffff;
+  /* Pure White */
+  --bg-secondary: #f9fafb;
+  /* Warm Alabaster White */
+  --bg-card: #ffffff;
+  /* White Card */
+  --accent-gold: #b38f43;
+  /* Luxury Gold (slightly darker for readable contrast on white) */
+  --accent-gold-hover: #967430;
+  /* Deep Gold Highlight */
+  --text-primary: #111827;
+  /* Deep Charcoal */
+  --text-muted: #6b7280;
+  /* Muted Slate Grey */
+  --border-color: rgba(179, 143, 67, 0.15);
+  /* Gold Dust Border */
+
   /* Fonts */
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Poppins', sans-serif;
-  
+
   /* Shadows & Transitions */
   --shadow-gold: 0 8px 30px rgba(179, 143, 67, 0.08);
   --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -66,13 +74,16 @@ a {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-gold);
 }
@@ -209,7 +220,8 @@ a {
 
 @media (max-width: 1024px) {
   .nav-menu {
-    display: none; /* Collapses to Hamburger on tablet & mobile */
+    display: none;
+    /* Collapses to Hamburger on tablet & mobile */
   }
 }
 
@@ -297,7 +309,8 @@ a {
 
 @media (max-width: 768px) {
   .btn-desktop-cta {
-    display: none; /* Hide button on mobile view to save whitespace */
+    display: none;
+    /* Hide button on mobile view to save whitespace */
   }
 }
 
@@ -395,7 +408,8 @@ a {
   transition: var(--transition-fast);
 }
 
-.mobile-nav-link:hover, .mobile-nav-link.active {
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
   color: var(--accent-gold);
   transform: translateX(8px);
 }
