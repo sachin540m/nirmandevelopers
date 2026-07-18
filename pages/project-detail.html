@@ -855,9 +855,12 @@
                 <span class="projects-pretitle" id="project-pretitle-label"
                     style="background: rgba(5, 8, 17, 0.85); border: 1px solid rgba(197, 160, 89, 0.4); padding: 0.4rem 1.2rem; border-radius: 20px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-gold); font-weight: 700;">Gated
                     Community</span>
-                <h1 class="hero-heading" id="project-heading-title" style="font-size: 3.5rem; margin-top: 1rem;">Project
-                    Name</h1>
                 <p class="hero-subheading" id="project-subheading-loc">Location Details</p>
+                <div style="margin-top: 1.2rem; display: none;" id="hero-video-cta-box">
+                    <button id="btn-watch-site-video" style="background: var(--accent-gold); color: #050817; border: none; padding: 0.7rem 1.6rem; border-radius: 30px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); font-size: 0.9rem; transition: transform 0.2s ease;">
+                        <span style="font-size: 1.1rem;">▶</span> Watch Site Video Tour
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -1170,7 +1173,7 @@
                     { src: '../images/gallery/firstproject11.webp', caption: 'Premium Farm Plots - Property Boundary View' }
                 ],
                 videos: [
-                    { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Premium Farm Plots Tour', cover: '../images/gallery/firstproject3.webp' },
+                    { src: '../videos/kashid_borli_tour.mp4', caption: 'Premium Farm Plots Real Site Walkthrough Tour', cover: '../images/projects/kashid_borli_card.jpeg' },
                     { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Premium Farm Plots Aerial Overview', cover: '../images/gallery/firstproject4.webp' },
                     { src: 'https://www.youtube.com/embed/dQw4w9WgXcQ', caption: 'Premium Farm Plots Road Connectivity', cover: '../images/gallery/firstproject5.webp' }
                 ]
@@ -1569,6 +1572,16 @@
                 submitBtn.innerText = 'Sold Out';
             }
 
+            // Populate hero video CTA button if project has videos
+            if (project.videos && project.videos.length > 0) {
+                const videoCtaBox = document.getElementById('hero-video-cta-box');
+                const videoBtn = document.getElementById('btn-watch-site-video');
+                if (videoCtaBox && videoBtn) {
+                    videoCtaBox.style.display = 'block';
+                    videoBtn.onclick = () => openVideoPlayer(project.videos[0].src, project.videos[0].caption);
+                }
+            }
+
             // Populate media gallery
             renderProjectGallery();
         });
@@ -1591,6 +1604,15 @@
                 return;
             }
             if (section) section.style.display = 'block';
+
+            const photosBtn = document.getElementById('btn-show-photos');
+            const videosBtn = document.getElementById('btn-show-videos');
+            if (photosBtn && project.photos) {
+                photosBtn.innerText = `Photos (${project.photos.length})`;
+            }
+            if (videosBtn && project.videos) {
+                videosBtn.innerText = `🎥 Videos (${project.videos.length})`;
+            }
 
             if (!project.videos || project.videos.length === 0) {
                 if (tabs) tabs.style.display = 'none';
