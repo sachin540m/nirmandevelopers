@@ -855,6 +855,7 @@
                 <span class="projects-pretitle" id="project-pretitle-label"
                     style="background: rgba(5, 8, 17, 0.85); border: 1px solid rgba(197, 160, 89, 0.4); padding: 0.4rem 1.2rem; border-radius: 20px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-gold); font-weight: 700;">Gated
                     Community</span>
+                <h1 class="hero-heading" id="project-heading-title" style="font-size: 3.5rem; margin-top: 1rem;">Project Name</h1>
                 <p class="hero-subheading" id="project-subheading-loc">Location Details</p>
                 <div style="margin-top: 1.2rem; display: none;" id="hero-video-cta-box">
                     <button id="btn-watch-site-video" style="background: var(--accent-gold); color: #050817; border: none; padding: 0.7rem 1.6rem; border-radius: 30px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); font-size: 0.9rem; transition: transform 0.2s ease;">
@@ -1483,12 +1484,18 @@
             const heroSec = document.getElementById('hero');
             const headingElem = document.getElementById('project-heading-title');
 
-            heroBg.style.backgroundPosition = 'center center';
-            heroBg.style.backgroundSize = 'cover';
-            heroSec.style.minHeight = '65vh';
-            heroSec.style.height = '65vh';
-            headingElem.style.display = 'block';
-            headingElem.innerText = project.name;
+            if (heroBg) {
+                heroBg.style.backgroundPosition = 'center center';
+                heroBg.style.backgroundSize = 'cover';
+            }
+            if (heroSec) {
+                heroSec.style.minHeight = '65vh';
+                heroSec.style.height = '65vh';
+            }
+            if (headingElem) {
+                headingElem.style.display = 'block';
+                headingElem.innerText = project.name;
+            }
 
             // Label status & Sold Out settings
             const label = document.getElementById('project-pretitle-label');
