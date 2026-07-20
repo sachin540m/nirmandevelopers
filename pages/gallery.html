@@ -1179,7 +1179,7 @@
                 const matchesProject = (!activeProject || item.getAttribute('data-project') === activeProject);
 
                 if (matchesType && matchesProject) {
-                    item.style.display = 'block';
+                    item.style.display = 'flex';
                     item.style.animation = 'galleryFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
                     matchCount++;
                 } else {
