@@ -622,8 +622,8 @@
 /* Scroll reveal helper transitions */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-reveal.revealed {
@@ -2802,7 +2802,7 @@
   background-position: center;
   background-repeat: no-repeat;
   /* Dual background fallback: tries local directory first, then high-fidelity Unsplash placeholder */
-  background-image: url('../images/backgrounds/cta-bg.jpg'), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+  background-image: url('../images/backgrounds/cta-bg.webp'), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
   box-sizing: border-box;
 }
 

@@ -89,10 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      threshold: 0.1
+      threshold: 0.01,
+      rootMargin: '0px 0px 150px 0px'
     });
     
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Safety fallback: reveal all sections automatically after short delay
+    setTimeout(() => {
+      revealElements.forEach(el => el.classList.add('revealed'));
+    }, 300);
   }
 
   // ==========================================================================
