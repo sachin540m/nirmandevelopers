@@ -141,8 +141,9 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 340px));
+            gap: 1.8rem;
+            justify-content: flex-start;
             transition: all 0.4s ease;
         }
         
@@ -156,6 +157,8 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition-smooth);
             cursor: pointer;
+            max-width: 350px;
+            width: 100%;
         }
         
         .gallery-card:hover {
@@ -167,9 +170,9 @@
         .gallery-media-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: 5 / 3;
+            height: 210px;
             overflow: hidden;
-            background-color: #000;
+            background-color: #050817;
         }
         
         .gallery-img {
