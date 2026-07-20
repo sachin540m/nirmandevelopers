@@ -416,29 +416,10 @@
 
         /* Grid styling */
         .gallery-grid {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 1.5rem !important;
-            width: 100% !important;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
             animation: galleryFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @media (max-width: 1200px) {
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
-        }
-
-        @media (max-width: 868px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .gallery-grid {
-                grid-template-columns: 1fr !important;
-            }
         }
 
         .gallery-card {
@@ -451,8 +432,6 @@
             display: flex;
             flex-direction: column;
             box-shadow: var(--shadow-light);
-            width: 100% !important;
-            max-width: none !important;
         }
 
         .gallery-card:hover {
@@ -464,7 +443,8 @@
         .gallery-media-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: 4 / 3;
+            padding-top: 56.25%;
+            /* 16:9 ratio */
             overflow: hidden;
             background: #050811;
         }
@@ -875,7 +855,8 @@
                 <span class="projects-pretitle" id="project-pretitle-label"
                     style="background: rgba(5, 8, 17, 0.85); border: 1px solid rgba(197, 160, 89, 0.4); padding: 0.4rem 1.2rem; border-radius: 20px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-gold); font-weight: 700;">Gated
                     Community</span>
-                <h1 class="hero-heading" id="project-heading-title" style="font-size: 3.5rem; margin-top: 1rem;">Project Name</h1>
+                <h1 class="hero-heading" id="project-heading-title" style="font-size: 3.5rem; margin-top: 1rem;">Project
+                    Name</h1>
                 <p class="hero-subheading" id="project-subheading-loc">Location Details</p>
             </div>
         </div>
@@ -1245,7 +1226,8 @@
             'alibaug-kurul': {
                 name: 'Alibaug Kurul Plots',
                 badge: 'SOLD OUT',
-                image: '../images/projects/alibaug_kurul.webp',
+                image: '../images/gallery/kurul_photo_1.jpeg',
+                heroImage: '../images/projects/alibaug_kurul_hero.jpeg',
                 locationName: 'Kurul Belkade Village, Alibaug',
                 mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.2789182379383!2d72.88569842424108!3d18.651509387334758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be879f974dfb295%3A0xea84124976cbf84a!2zMTjCsDM5JzA1LjQiTiA3MsKwNTMnMTcuOCJF!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin',
                 price: '₹ 10 Lakhs / Guntha',
@@ -1300,20 +1282,21 @@
                     }
                 ],
                 photos: [
-                    { src: '../images/gallery/secondprojectimages1.webp', caption: 'Alibaug Kurul Plots - Site View' },
-                    { src: '../images/gallery/secondprojectimages2.webp', caption: 'Alibaug Kurul Plots - Entrance' },
-                    { src: '../images/gallery/secondprojectimages3.webp', caption: 'Alibaug Kurul Plots - Plot View' },
-                    { src: '../images/gallery/secondprojectimages4.webp', caption: 'Alibaug Kurul Plots - Development' },
-                    { src: '../images/gallery/secondprojectimages5.webp', caption: 'Alibaug Kurul Plots - Pathways' },
-                    { src: '../images/gallery/secondprojectimages6.webp', caption: 'Alibaug Kurul Plots - Boundary' },
-                    { src: '../images/gallery/secondprojectimages7.webp', caption: 'Alibaug Kurul Plots - Open Space' }
+                    { src: '../images/gallery/kurul_photo_1.jpeg', caption: 'Alibaug Kurul - Villa & Internal Plot Pathway' },
+                    { src: '../images/gallery/kurul_photo_2.jpeg', caption: 'Alibaug Kurul - Country Road & Farmhouse View' },
+                    { src: '../images/gallery/kurul_photo_3.jpeg', caption: 'Alibaug Kurul - Green Plot Meadow & Mountain Backdrop' },
+                    { src: '../images/gallery/kurul_photo_4.jpeg', caption: 'Alibaug Kurul - Green Plotted Land & Infrastructure' },
+                    { src: '../images/gallery/kurul_photo_5.jpeg', caption: 'Alibaug Kurul - Gated Entrance & Fenced Boundary' },
+                    { src: '../images/gallery/kurul_photo_6.jpeg', caption: 'Alibaug Kurul - Main Internal Road & Drain System' }
                 ],
-                videos: []
+                videos: [
+                    { src: '../videos/alibaug_kurul_video.mp4', caption: 'Alibaug Kurul - Site Walkthrough Video Tour', cover: '../images/projects/alibaug_kurul_card.jpeg' }
+                ]
             },
             'kashid-tembhode': {
                 name: 'Kashid-Tembhode Plots',
                 badge: 'Completely Sold Out',
-                image: '../images/projects/kashid_tembhode_card.jpeg',
+                image: '../images/gallery/tembhode_photo_1.jpeg',
                 heroImage: '../images/projects/kashid_tembhode_hero.jpeg',
                 locationName: 'Alibaug – Near Kashid Beach & Borli Mandla Market, Tembhode Village',
                 mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.565882697887!2d72.90500000000002!3d18.503463887425126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be87f9754f9a0c7%3A0xe54ef929c362b874!2zMTjCsDM5JzA1LjQiTiA3MsKwNTMnMTcuOCJF!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin',
@@ -1374,13 +1357,7 @@
                     { src: '../images/gallery/tembhode_photo_1.jpeg', caption: 'Kashid-Tembhode - Foundation & Mountain View' },
                     { src: '../images/gallery/tembhode_photo_2.jpeg', caption: 'Kashid-Tembhode - Demarcated Plot View' },
                     { src: '../images/gallery/tembhode_photo_3.jpeg', caption: 'Kashid-Tembhode - Lush Green Hill Slope View' },
-                    { src: '../images/gallery/tembhode_photo_4.jpeg', caption: 'Kashid-Tembhode - Open Countryside Plot View' },
-                    { src: '../images/gallery/thirdprojectimages1.webp', caption: 'Kashid-Tembhode Plots - View 1' },
-                    { src: '../images/gallery/thirdprojectimages2.webp', caption: 'Kashid-Tembhode Plots - View 2' },
-                    { src: '../images/gallery/thirdprojectimages3.webp', caption: 'Kashid-Tembhode Plots - View 3' },
-                    { src: '../images/gallery/thirdprojectimages4.webp', caption: 'Kashid-Tembhode - View 4' },
-                    { src: '../images/gallery/thirdprojectimages5.webp', caption: 'Kashid-Tembhode - View 5' },
-                    { src: '../images/gallery/thirdprojectimages6.webp', caption: 'Kashid-Tembhode - View 6' }
+                    { src: '../images/gallery/tembhode_photo_4.jpeg', caption: 'Kashid-Tembhode - Open Countryside Plot View' }
                 ],
                 videos: [
                     { src: '../videos/kashid_tembhode_video.mp4', caption: 'Kashid-Tembhode - Site Walkthrough Video', cover: '../images/projects/kashid_tembhode_card.jpeg' }
