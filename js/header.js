@@ -1,5 +1,5 @@
 /* 
-  NIRMAN DEVELOPERS - HEADER INTERACTIVE CONTROLLER
+  NIRMAN DEVELOPER - HEADER INTERACTIVE CONTROLLER
   Controls: Sticky on scroll, mobile menu toggling, accessibility, and active state tracking.
 */
 

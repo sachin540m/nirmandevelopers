@@ -1,5 +1,5 @@
 /* 
-  NIRMAN DEVELOPERS - MAIN SITE APP SCRIPT
+  NIRMAN DEVELOPER - MAIN SITE APP SCRIPT
   Controls: Hero interactive triggers, smooth anchoring.
 */
 
